@@ -164,7 +164,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmBiseccion";
-            this.Text = "frmBiseccion";
+            this.Text = "Método de Biseción";
             this.Click += new System.EventHandler(this.frmBiseccion_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).EndInit();
             this.ResumeLayout(false);
