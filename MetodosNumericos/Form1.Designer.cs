@@ -36,26 +36,30 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.raicesDeEcuacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(384, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // raicesDeEcuacionesToolStripMenuItem
             // 
+            this.raicesDeEcuacionesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.raicesDeEcuacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.metodoDeBiseccionToolStripMenuItem});
+            this.raicesDeEcuacionesToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.raicesDeEcuacionesToolStripMenuItem.Name = "raicesDeEcuacionesToolStripMenuItem";
-            this.raicesDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.raicesDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(221, 28);
             this.raicesDeEcuacionesToolStripMenuItem.Text = "Raices de Ecuaciones";
             // 
             // metodoDeBiseccionToolStripMenuItem
             // 
+            this.metodoDeBiseccionToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.metodoDeBiseccionToolStripMenuItem.Name = "metodoDeBiseccionToolStripMenuItem";
-            this.metodoDeBiseccionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.metodoDeBiseccionToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
             this.metodoDeBiseccionToolStripMenuItem.Text = "Metodo de Biseccion";
             this.metodoDeBiseccionToolStripMenuItem.Click += new System.EventHandler(this.metodoDeBiseccionToolStripMenuItem_Click);
             // 
@@ -63,10 +67,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.MediumPurple;
+            this.ClientSize = new System.Drawing.Size(384, 561);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frm";
             this.Text = "Menú Principal";
+            this.Load += new System.EventHandler(this.frm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
