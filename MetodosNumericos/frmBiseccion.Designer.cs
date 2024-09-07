@@ -37,7 +37,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tf_b = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_calcular = new System.Windows.Forms.Button();
+            this.dgv_result = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,6 +65,7 @@
             // 
             // numMaxIter
             // 
+            this.numMaxIter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numMaxIter.Location = new System.Drawing.Point(350, 96);
             this.numMaxIter.Name = "numMaxIter";
             this.numMaxIter.Size = new System.Drawing.Size(100, 29);
@@ -80,6 +83,7 @@
             // 
             // ErrMax
             // 
+            this.ErrMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ErrMax.Location = new System.Drawing.Point(350, 137);
             this.ErrMax.Name = "ErrMax";
             this.ErrMax.Size = new System.Drawing.Size(100, 29);
@@ -87,6 +91,7 @@
             // 
             // tf_a
             // 
+            this.tf_a.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tf_a.Location = new System.Drawing.Point(561, 96);
             this.tf_a.Name = "tf_a";
             this.tf_a.Size = new System.Drawing.Size(100, 29);
@@ -104,6 +109,7 @@
             // 
             // tf_b
             // 
+            this.tf_b.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tf_b.Location = new System.Drawing.Point(561, 135);
             this.tf_b.Name = "tf_b";
             this.tf_b.Size = new System.Drawing.Size(100, 29);
@@ -119,22 +125,33 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "b:";
             // 
-            // button1
+            // btn_calcular
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(538, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 39);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Calcular raíz";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_calcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_calcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_calcular.Location = new System.Drawing.Point(538, 35);
+            this.btn_calcular.Name = "btn_calcular";
+            this.btn_calcular.Size = new System.Drawing.Size(123, 39);
+            this.btn_calcular.TabIndex = 9;
+            this.btn_calcular.Text = "Calcular raíz";
+            this.btn_calcular.UseVisualStyleBackColor = true;
+            this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click);
+            // 
+            // dgv_result
+            // 
+            this.dgv_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_result.Location = new System.Drawing.Point(16, 180);
+            this.dgv_result.Name = "dgv_result";
+            this.dgv_result.Size = new System.Drawing.Size(645, 269);
+            this.dgv_result.TabIndex = 10;
             // 
             // frmBiseccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgv_result);
+            this.Controls.Add(this.btn_calcular);
             this.Controls.Add(this.tf_b);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tf_a);
@@ -145,10 +162,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmBiseccion";
             this.Text = "frmBiseccion";
             this.Click += new System.EventHandler(this.frmBiseccion_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +183,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tf_b;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_calcular;
+        private System.Windows.Forms.DataGridView dgv_result;
     }
 }

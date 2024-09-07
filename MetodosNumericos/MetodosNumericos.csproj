@@ -58,6 +58,7 @@
     <Compile Include="frmBiseccion.Designer.cs">
       <DependentUpon>frmBiseccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="MetodosSolEc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

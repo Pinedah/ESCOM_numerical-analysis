@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+# MetodosNumericos
+=======
+create readme
+>>>>>>> f66408fa42a40eda258cb6420915a5b85028223b
+=======
+=======
+>>>>>>> eb82959056abd4c5d685919b11933459c7490aea
 
 # Numerical Methods - Class Repository
 
@@ -31,3 +41,7 @@ Feel free to browse through the code, clone the repository, or use any of the ex
 If you have any questions or suggestions, please feel free to open an issue or contact me.
 
 
+<<<<<<< HEAD
+>>>>>>> eb82959056abd4c5d685919b11933459c7490aea
+=======
+>>>>>>> eb82959056abd4c5d685919b11933459c7490aea
