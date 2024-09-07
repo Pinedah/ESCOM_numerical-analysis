@@ -72,7 +72,6 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frm";
             this.Text = "Menú Principal";
-            this.Load += new System.EventHandler(this.frm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
