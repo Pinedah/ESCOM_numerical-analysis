@@ -5,6 +5,8 @@ using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Numerics;
+using System.ComponentModel;
 
 namespace MetodosNumericos
 {
@@ -44,10 +46,44 @@ namespace MetodosNumericos
             return false;
         }
 
+
+        public bool metMuller(Complex p0, Complex p1,Complex  p2)
+        { // Metodo de biseccion
+            float errorActual;
+            int i;
+            i = 1;
+            Complex D,a,b,c;
+            while (i <= numMaxIter)
+            {
+                D=(p1-p2)*(p0-p2)*(p0-p2);
+                a = ((p1-p2));
+                errorActual = (b - a) / 2;
+                if (errorActual <= errorMaximo)
+                {
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                if (Func(a) * Func(c) < 0)
+                    b = c;
+                else
+                    a = c;
+
+                i++;
+            }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
         float Func(float x)
         {
             float r;
             r = (float)(Math.Pow(x, 2) - 3.0);
+            return r;
+        }
+        Complex FuncCom(Complex x)
+        {
+            Complex r;
+            r = (Complex)(Complex.Pow(x,2) - 3.0);
             return r;
         }
 
