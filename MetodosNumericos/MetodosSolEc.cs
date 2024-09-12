@@ -69,8 +69,8 @@ namespace MetodosNumericos
                 double errorActual = error.Magnitude;
                 if (errorActual <= errorMaximoComplex.Magnitude)
                 {
-                    result = ComplexToString(p3);
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + result, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    double p3real = p3.Real;
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + p3real.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 p0=p1; p1 = p2; p2 = p3;
