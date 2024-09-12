@@ -24,6 +24,11 @@ namespace MetodosNumericos
             f.WindowState = FormWindowState.Normal;
         }
 
-        
+        private void metodoDeMullerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMuller f = new frmMuller();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }

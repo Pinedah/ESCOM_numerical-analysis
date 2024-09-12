@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,12 @@
     <Compile Include="frmBiseccion.Designer.cs">
       <DependentUpon>frmBiseccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMuller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMuller.Designer.cs">
+      <DependentUpon>frmMuller.cs</DependentUpon>
+    </Compile>
     <Compile Include="MetodosSolEc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +73,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBiseccion.resx">
       <DependentUpon>frmBiseccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMuller.resx">
+      <DependentUpon>frmMuller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

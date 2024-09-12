@@ -49,8 +49,7 @@ namespace MetodosNumericos
 
 
         public bool metMuller(Complex p0, Complex p1,Complex  p2)
-        { // Metodo de biseccion
-            Complex errorActual;
+        { // Metodo de Muller
             int i;
             i = 1;
             Complex D,a,b,c;
@@ -58,16 +57,20 @@ namespace MetodosNumericos
             Complex negativo = new Complex(0, 0);
             while (i <= numMaxIter)
             {
-                D=(p1-p2)*(p0-p2)*(p0-p2);
+                D=(p1-p2)*(p0-p2)*(p0-p1);
                 a = ((p1-p2)*(FuncCom(p0)-FuncCom(p2))- (p0 - p2) * (FuncCom(p1) - FuncCom(p2)))/D;
                 b = ((Complex.Pow(p0-p2,2)*(FuncCom(p1)- FuncCom(p2))) - (Complex.Pow(p1 - p2, 2) * (FuncCom(p0) - FuncCom(p2)))) / D;
                 c = FuncCom(p2);
-
-                p3 = p2 - (2 * c / (b + (b.Magnitude < negativo.Magnitude ? -1 : 1)) * Complex.Sqrt(Complex.Pow(b, 2) - 4 * a * c));
-                errorActual = Complex.Abs(p3-p2);
-                if (errorActual.Magnitude <= errorMaximoComplex.Magnitude)
+                string result;
+                Complex discriminant = Complex.Sqrt(Complex.Pow(b, 2) - 4 * a * c);
+                Complex denominator = b + (b.Real >= 0 ? discriminant : -discriminant);
+                p3 = p2 - (2 * c / denominator);
+                Complex error = Complex.Abs(p3 - p2);
+                double errorActual = error.Magnitude;
+                if (errorActual <= errorMaximoComplex.Magnitude)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    result = ComplexToString(p3);
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + result, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 p0=p1; p1 = p2; p2 = p3;
@@ -89,6 +92,14 @@ namespace MetodosNumericos
             Complex r;
             r = (Complex)(Complex.Pow(x,2) - 3);
             return r;
+        }
+        public static string ComplexToString(Complex complex)
+        {
+            // Formatear la parte imaginaria
+            string imaginaryPart = complex.Imaginary >= 0 ? $"+ {complex.Imaginary}i" : $"- {-complex.Imaginary}i";
+
+            // Combinar las partes real e imaginaria
+            return $"{complex.Real} {imaginaryPart}";
         }
 
     }
