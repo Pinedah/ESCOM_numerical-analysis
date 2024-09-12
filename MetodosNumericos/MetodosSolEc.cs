@@ -80,6 +80,36 @@ namespace MetodosNumericos
             MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
         }
+        public bool metodoFalsaPosicion(float a, float b)
+        {
+            float p, ErrorAct;
+            int i;
+            if (Func(a) * Func(b) > 0)
+            {
+                MessageBox.Show("No se puede aplicar el metodo de la falsa posición", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            i = 1;
+            while (i < numMaxIter)
+            {
+                p = b - (Func(b) * (b - a)) / (Func(b) - Func(a));
+                ErrorAct = (float)(Math.Abs(b - p) / Math.Pow((double)p, (double)2.0));
+                if (ErrorAct <= errorMaximo)
+                {
+                    MessageBox.Show("Se obtuvo la aproximación raiz con el error deseado.\nRaiz =" + p.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                if (Func(a) * Func(p) < 0) { b = p; }
+                else
+                {
+                    a = p;
+                }
+                i++;
+
+            }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error indicado.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
 
         float Func(float x)
         {
