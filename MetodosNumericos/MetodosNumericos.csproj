@@ -65,6 +65,12 @@
     <Compile Include="frmMuller.Designer.cs">
       <DependentUpon>frmMuller.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSecante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecante.Designer.cs">
+      <DependentUpon>frmSecante.cs</DependentUpon>
+    </Compile>
     <Compile Include="MetodosSolEc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMuller.resx">
       <DependentUpon>frmMuller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecante.resx">
+      <DependentUpon>frmSecante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -30,5 +30,13 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void metodoDeLaSecanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSecante f = new frmSecante();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+
+        }
     }
 }

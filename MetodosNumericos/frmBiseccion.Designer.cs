@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numMaxIter = new System.Windows.Forms.TextBox();
@@ -52,6 +55,7 @@
             this.label1.Size = new System.Drawing.Size(246, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "MÉTODO DE BISECCIÓN";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -62,6 +66,7 @@
             this.label2.Size = new System.Drawing.Size(268, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Número máximo de iteraciones:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // numMaxIter
             // 
@@ -70,6 +75,7 @@
             this.numMaxIter.Name = "numMaxIter";
             this.numMaxIter.Size = new System.Drawing.Size(100, 29);
             this.numMaxIter.TabIndex = 2;
+            this.numMaxIter.TextChanged += new System.EventHandler(this.numMaxIter_TextChanged);
             // 
             // label3
             // 
@@ -80,6 +86,7 @@
             this.label3.Size = new System.Drawing.Size(130, 22);
             this.label3.TabIndex = 3;
             this.label3.Text = "Error máximo:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // ErrMax
             // 
@@ -88,6 +95,7 @@
             this.ErrMax.Name = "ErrMax";
             this.ErrMax.Size = new System.Drawing.Size(100, 29);
             this.ErrMax.TabIndex = 4;
+            this.ErrMax.TextChanged += new System.EventHandler(this.ErrMax_TextChanged);
             // 
             // tf_a
             // 
@@ -96,6 +104,7 @@
             this.tf_a.Name = "tf_a";
             this.tf_a.Size = new System.Drawing.Size(100, 29);
             this.tf_a.TabIndex = 6;
+            this.tf_a.TextChanged += new System.EventHandler(this.tf_a_TextChanged);
             // 
             // label4
             // 
@@ -106,6 +115,7 @@
             this.label4.Size = new System.Drawing.Size(24, 22);
             this.label4.TabIndex = 5;
             this.label4.Text = "a:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tf_b
             // 
@@ -114,6 +124,7 @@
             this.tf_b.Name = "tf_b";
             this.tf_b.Size = new System.Drawing.Size(100, 29);
             this.tf_b.TabIndex = 8;
+            this.tf_b.TextChanged += new System.EventHandler(this.tf_b_TextChanged);
             // 
             // label5
             // 
@@ -124,6 +135,7 @@
             this.label5.Size = new System.Drawing.Size(25, 22);
             this.label5.TabIndex = 7;
             this.label5.Text = "b:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btn_calcular
             // 
@@ -139,11 +151,36 @@
             // 
             // dgv_result
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_result.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_result.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_result.Location = new System.Drawing.Point(16, 180);
             this.dgv_result.Name = "dgv_result";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_result.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_result.Size = new System.Drawing.Size(645, 269);
             this.dgv_result.TabIndex = 10;
+            this.dgv_result.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_result_CellContentClick);
             // 
             // frmBiseccion
             // 

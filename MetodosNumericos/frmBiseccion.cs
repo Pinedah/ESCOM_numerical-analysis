@@ -35,9 +35,57 @@ namespace MetodosNumericos
             MetodosSolEc metodos = new MetodosSolEc();
             metodos.numMaxIter = numMaxIte;
             metodos.errorMaximo = errorMax;
-            res = metodos.metBiseccion(a, b); 
+            res = metodos.metBiseccion(a, b, ref this.dgv_result); 
         }
 
-        
+        private void dgv_result_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tf_b_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_a_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ErrMax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numMaxIter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

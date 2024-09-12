@@ -32,6 +32,7 @@
             this.raicesDeEcuacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodoDeBiseccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodoDeMullerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metodoDeLaSecanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.raicesDeEcuacionesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.raicesDeEcuacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.metodoDeBiseccionToolStripMenuItem,
-            this.metodoDeMullerToolStripMenuItem});
+            this.metodoDeMullerToolStripMenuItem,
+            this.metodoDeLaSecanteToolStripMenuItem});
             this.raicesDeEcuacionesToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.raicesDeEcuacionesToolStripMenuItem.Name = "raicesDeEcuacionesToolStripMenuItem";
             this.raicesDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(221, 28);
@@ -71,6 +73,13 @@
             this.metodoDeMullerToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
             this.metodoDeMullerToolStripMenuItem.Text = "Metodo de Muller";
             this.metodoDeMullerToolStripMenuItem.Click += new System.EventHandler(this.metodoDeMullerToolStripMenuItem_Click);
+            // 
+            // metodoDeLaSecanteToolStripMenuItem
+            // 
+            this.metodoDeLaSecanteToolStripMenuItem.Name = "metodoDeLaSecanteToolStripMenuItem";
+            this.metodoDeLaSecanteToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.metodoDeLaSecanteToolStripMenuItem.Text = "Metodo de la Secante";
+            this.metodoDeLaSecanteToolStripMenuItem.Click += new System.EventHandler(this.metodoDeLaSecanteToolStripMenuItem_Click);
             // 
             // frm
             // 
@@ -94,6 +103,7 @@
         private System.Windows.Forms.ToolStripMenuItem raicesDeEcuacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem metodoDeBiseccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem metodoDeMullerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metodoDeLaSecanteToolStripMenuItem;
     }
 }
 

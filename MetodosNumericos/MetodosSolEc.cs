@@ -16,7 +16,7 @@ namespace MetodosNumericos
         public float errorMaximo;
         public Complex errorMaximoComplex;
 
-        public bool metBiseccion(float a, float b)
+        public bool metBiseccion(float a, float b, ref DataGridView dgvResultado)
         { // Metodo de biseccion
             float c, errorActual;
             int i;
@@ -26,11 +26,35 @@ namespace MetodosNumericos
                 MessageBox.Show("No se puede aplicar el metodo de Biseccion", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("valor_a", "a");
+            dgvResultado.Columns.Add("valor_c", "c");
+            dgvResultado.Columns.Add("valor_b", "b");
+            dgvResultado.Columns.Add("f_a", "f(a)");
+            dgvResultado.Columns.Add("f_c", "f(c)");
+            dgvResultado.Columns.Add("f_b", "f(b)");
+            dgvResultado.Columns.Add("error", "Error");
+
             i = 1;
             while (i <= numMaxIter)
             {
                 c = (a + b) / 2;
                 errorActual = (b - a) / 2;
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = a;
+                dgvResultado.Rows[i - 1].Cells[2].Value = c;
+                dgvResultado.Rows[i - 1].Cells[3].Value = c;
+                dgvResultado.Rows[i - 1].Cells[4].Value = Func(a);
+                dgvResultado.Rows[i - 1].Cells[5].Value = Func(c);
+                dgvResultado.Rows[i - 1].Cells[6].Value = Func(b);
+                dgvResultado.Rows[i - 1].Cells[7].Value = errorActual;
+                // dgvResultado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
                 if (errorActual <= errorMaximo)
                 {
                     MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -42,6 +66,57 @@ namespace MetodosNumericos
                     a = c;
 
                 i++;
+            }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
+        public bool metSecante(float a, float b, ref DataGridView dgvResultado)
+        { // Metodo de la secante
+            float c, errorActual;
+            int i;
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("valor_a", "a");
+            dgvResultado.Columns.Add("valor_b", "b");
+            dgvResultado.Columns.Add("valor_c", "c");
+            dgvResultado.Columns.Add("f_a", "f(a)");
+            dgvResultado.Columns.Add("f_c", "f(c)");
+            dgvResultado.Columns.Add("f_b", "f(b)");
+            dgvResultado.Columns.Add("error", "Error");
+            
+            i = 1;
+            while (i <= numMaxIter)
+            {
+                // p = a - (f(a)*(b-a))/(f(b)-f(a));
+                c = a - ((Func(a) * (b-a)) / (Func(b) - Func(a)));
+                errorActual = Math.Abs((c - b));
+                
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = a;
+                dgvResultado.Rows[i - 1].Cells[2].Value = c;
+                dgvResultado.Rows[i - 1].Cells[3].Value = c;
+                dgvResultado.Rows[i - 1].Cells[4].Value = Func(a);
+                dgvResultado.Rows[i - 1].Cells[5].Value = Func(c);
+                dgvResultado.Rows[i - 1].Cells[6].Value = Func(b);
+                dgvResultado.Rows[i - 1].Cells[7].Value = errorActual;
+                // dgvResultado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+                if (errorActual <= errorMaximo)
+                {
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+
+                a = b;
+                b = c;
+
+                i++;
+
             }
             MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
