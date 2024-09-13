@@ -15,6 +15,8 @@ namespace MetodosNumericos
         public int numMaxIter;
         public float errorMaximo;
         public Complex errorMaximoComplex;
+        float AproxRaiz;
+        Complex AproxRaizC;
 
         public bool metBiseccion(float a, float b, ref DataGridView dgvResultado)
         { // Metodo de biseccion
@@ -155,6 +157,81 @@ namespace MetodosNumericos
             }
             MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
+        }
+        public bool metMuller2(Complex p0, Complex p1, Complex p2, ref DataGridView dgvResultado)
+        { // Metodo de Muller
+            float ErrorAct;
+            Complex p=new Complex(),a=new Complex(),b=new Complex(),c=new Complex();
+            Complex Fp1MFp2 = new Complex();
+            Complex Fp0MFp2= new Complex();
+            Complex p0Mp2= new Complex();
+            Complex p1Mp2 = new Complex();
+            Complex p0Mp1 = new Complex();
+            Complex divisor = new Complex();
+            Complex D = new Complex();
+            Complex E = new Complex();
+            Complex Aux = new Complex();
+            int i;
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("valor_p0", "p0");
+            dgvResultado.Columns.Add("valor_p1", "p1");
+            dgvResultado.Columns.Add("valor_p2", "p2");
+            dgvResultado.Columns.Add("p", "p");
+            dgvResultado.Columns.Add("error", "Error");
+            i = 1;
+            while (i<=numMaxIter)
+            {
+                p0Mp2=Complex.Subtract(p0, p2);
+                p0Mp1 = Complex.Subtract(p0, p1);
+                Fp1MFp2 = Complex.Subtract(FuncCom(p1),FuncCom(p2));
+                Fp0MFp2 = Complex.Subtract(FuncCom(p1), FuncCom(p2));
+                divisor= Complex.Multiply(p0Mp2, p1Mp2);
+                divisor = Complex.Multiply(divisor, p0Mp1);
+                c=FuncCom(p2);
+                b = Complex.Subtract(Complex.Multiply(Complex.Pow(p0Mp2,2), Fp1MFp2) , Complex.Multiply(Complex.Pow(p1Mp2,2), Fp0MFp2));
+                b=Complex.Divide(b, divisor);
+
+                a= Complex.Subtract(Complex.Multiply(p1Mp2,Fp0MFp2),Complex.Multiply(p0Mp2,Fp1MFp2));
+                a = Complex.Divide(a,divisor);
+
+                D = Complex.Sqrt(Complex.Subtract(Complex.Pow(b,2),Complex.Multiply(new Complex(4,0), Complex.Multiply(a,c))));
+                if (Complex.Abs(Complex.Subtract(b, D)) < Complex.Abs(Complex.Add(b, D)))
+                {
+                    E= Complex.Add(b, D);
+                }
+                else
+                {
+                    E = Complex.Subtract(b, D);
+                }
+                p = Complex.Subtract(p2, Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
+
+
+                ErrorAct = (float)Complex.Abs(Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = p0;
+                dgvResultado.Rows[i - 1].Cells[2].Value = p1;
+                dgvResultado.Rows[i - 1].Cells[3].Value = p2;
+                dgvResultado.Rows[i - 1].Cells[4].Value = p;
+                dgvResultado.Rows[i - 1].Cells[5].Value = ErrorAct;
+
+                if (ErrorAct <= errorMaximo)
+                {
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + p.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+
+                }
+                p0 = p1;
+                p1 = p2;
+                p2 = p;
+                i++;
+
+            }
+            return false;
+                
         }
         public bool metodoFalsaPosicion(float a, float b)
         {

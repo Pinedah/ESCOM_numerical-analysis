@@ -48,7 +48,7 @@ namespace MetodosNumericos
             MetodosSolEc metodos = new MetodosSolEc();
             metodos.numMaxIter = numMaxIte;
             metodos.errorMaximoComplex = errorMax;
-            res = metodos.metMuller(P0,P1,P2);
+            res = metodos.metMuller2(P0,P1,P2, ref this.dgv_result);
         }
         private Complex ParseComplex(string input)
         {
