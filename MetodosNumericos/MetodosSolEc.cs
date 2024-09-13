@@ -8,10 +8,6 @@ using System.Windows.Forms;
 using System.Numerics;
 using System.ComponentModel;
 
-// Libreria para diferenciar
-using MathNet.Symbolics;
-using Expr = MathNet.Symbolics.SymbolicExpression;
-
 namespace MetodosNumericos
 {
     internal class MetodosSolEc
@@ -81,6 +77,7 @@ namespace MetodosNumericos
             int i;
 
             dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
             dgvResultado.Columns.Add("iteracion", "i");
             dgvResultado.Columns.Add("valor_a", "a");
             dgvResultado.Columns.Add("valor_b", "b");

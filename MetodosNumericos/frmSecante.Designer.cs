@@ -45,7 +45,7 @@
             // dgv_result
             // 
             this.dgv_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_result.Location = new System.Drawing.Point(80, 163);
+            this.dgv_result.Location = new System.Drawing.Point(12, 156);
             this.dgv_result.Name = "dgv_result";
             this.dgv_result.Size = new System.Drawing.Size(645, 269);
             this.dgv_result.TabIndex = 34;
@@ -54,7 +54,7 @@
             // 
             this.btn_calcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_calcular.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_calcular.Location = new System.Drawing.Point(602, 66);
+            this.btn_calcular.Location = new System.Drawing.Point(534, 59);
             this.btn_calcular.Name = "btn_calcular";
             this.btn_calcular.Size = new System.Drawing.Size(123, 39);
             this.btn_calcular.TabIndex = 33;
@@ -65,7 +65,7 @@
             // txt_b_s
             // 
             this.txt_b_s.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_b_s.Location = new System.Drawing.Point(367, 123);
+            this.txt_b_s.Location = new System.Drawing.Point(299, 116);
             this.txt_b_s.Name = "txt_b_s";
             this.txt_b_s.Size = new System.Drawing.Size(100, 29);
             this.txt_b_s.TabIndex = 32;
@@ -74,7 +74,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(324, 130);
+            this.label5.Location = new System.Drawing.Point(256, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 22);
             this.label5.TabIndex = 31;
@@ -83,7 +83,7 @@
             // txt_a_s
             // 
             this.txt_a_s.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_a_s.Location = new System.Drawing.Point(206, 123);
+            this.txt_a_s.Location = new System.Drawing.Point(138, 116);
             this.txt_a_s.Name = "txt_a_s";
             this.txt_a_s.Size = new System.Drawing.Size(100, 29);
             this.txt_a_s.TabIndex = 30;
@@ -92,7 +92,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(163, 126);
+            this.label4.Location = new System.Drawing.Point(95, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 22);
             this.label4.TabIndex = 29;
@@ -101,7 +101,7 @@
             // ErrMaxMu_s
             // 
             this.ErrMaxMu_s.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrMaxMu_s.Location = new System.Drawing.Point(414, 88);
+            this.ErrMaxMu_s.Location = new System.Drawing.Point(346, 81);
             this.ErrMaxMu_s.Name = "ErrMaxMu_s";
             this.ErrMaxMu_s.Size = new System.Drawing.Size(100, 29);
             this.ErrMaxMu_s.TabIndex = 28;
@@ -110,7 +110,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(76, 93);
+            this.label3.Location = new System.Drawing.Point(8, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 22);
             this.label3.TabIndex = 27;
@@ -119,7 +119,7 @@
             // numMaxIterMu_s
             // 
             this.numMaxIterMu_s.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numMaxIterMu_s.Location = new System.Drawing.Point(414, 53);
+            this.numMaxIterMu_s.Location = new System.Drawing.Point(346, 46);
             this.numMaxIterMu_s.Name = "numMaxIterMu_s";
             this.numMaxIterMu_s.Size = new System.Drawing.Size(100, 29);
             this.numMaxIterMu_s.TabIndex = 26;
@@ -128,7 +128,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(76, 56);
+            this.label2.Location = new System.Drawing.Point(8, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(268, 22);
             this.label2.TabIndex = 25;
@@ -138,7 +138,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 18);
+            this.label1.Location = new System.Drawing.Point(8, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 22);
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.dgv_result);
             this.Controls.Add(this.btn_calcular);
             this.Controls.Add(this.txt_b_s);
