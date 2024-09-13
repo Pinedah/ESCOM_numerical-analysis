@@ -234,6 +234,44 @@ namespace MetodosNumericos
             return false;
         }
 
+        public bool metPFijo(float po, ref DataGridView dgvResultado)
+        {
+            float errorActual;
+            int i;
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("Pi", "Pi");
+            dgvResultado.Columns.Add("g_po", "g(Pi)");
+            dgvResultado.Columns.Add("error", "Error");
+
+
+            i = 1;
+            while (i <= numMaxIter)
+            {
+                errorActual = Math.Abs(po - FuncPF(po));
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = po;
+                dgvResultado.Rows[i - 1].Cells[2].Value = Func(po);
+                dgvResultado.Rows[i - 1].Cells[3].Value = errorActual;
+
+
+                if (errorActual <= errorMaximo)
+                {
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + po.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+
+                po = FuncPF(po);
+                i++;
+            }
+
+            MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+
+        }
 
         float FuncPrima(float x)
         {
@@ -245,6 +283,13 @@ namespace MetodosNumericos
         {
             float r;
             r = (float)(Math.Pow(x, 2) - 3.0);
+            return r;
+        }
+
+        float FuncPF(float x)
+        {
+            float r;
+            r = (float)(x - (Math.Pow(x, 3) + 4 * x * x - 10) / (3 * x * x + 8 * x));
             return r;
         }
         

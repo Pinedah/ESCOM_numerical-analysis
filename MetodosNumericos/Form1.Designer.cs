@@ -34,6 +34,7 @@
             this.metodoDeMullerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodoDeLaSecanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodoDeNewtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.métodoDePuntoFijoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@
             this.metodoDeBiseccionToolStripMenuItem,
             this.metodoDeMullerToolStripMenuItem,
             this.metodoDeLaSecanteToolStripMenuItem,
-            this.metodoDeNewtonToolStripMenuItem});
+            this.metodoDeNewtonToolStripMenuItem,
+            this.métodoDePuntoFijoToolStripMenuItem});
             this.raicesDeEcuacionesToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.raicesDeEcuacionesToolStripMenuItem.Name = "raicesDeEcuacionesToolStripMenuItem";
             this.raicesDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(221, 28);
@@ -65,30 +67,37 @@
             // 
             this.metodoDeBiseccionToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.metodoDeBiseccionToolStripMenuItem.Name = "metodoDeBiseccionToolStripMenuItem";
-            this.metodoDeBiseccionToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.metodoDeBiseccionToolStripMenuItem.Size = new System.Drawing.Size(283, 28);
             this.metodoDeBiseccionToolStripMenuItem.Text = "Metodo de Biseccion";
             this.metodoDeBiseccionToolStripMenuItem.Click += new System.EventHandler(this.metodoDeBiseccionToolStripMenuItem_Click);
             // 
             // metodoDeMullerToolStripMenuItem
             // 
             this.metodoDeMullerToolStripMenuItem.Name = "metodoDeMullerToolStripMenuItem";
-            this.metodoDeMullerToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.metodoDeMullerToolStripMenuItem.Size = new System.Drawing.Size(283, 28);
             this.metodoDeMullerToolStripMenuItem.Text = "Metodo de Muller";
             this.metodoDeMullerToolStripMenuItem.Click += new System.EventHandler(this.metodoDeMullerToolStripMenuItem_Click);
             // 
             // metodoDeLaSecanteToolStripMenuItem
             // 
             this.metodoDeLaSecanteToolStripMenuItem.Name = "metodoDeLaSecanteToolStripMenuItem";
-            this.metodoDeLaSecanteToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.metodoDeLaSecanteToolStripMenuItem.Size = new System.Drawing.Size(283, 28);
             this.metodoDeLaSecanteToolStripMenuItem.Text = "Metodo de la Secante";
             this.metodoDeLaSecanteToolStripMenuItem.Click += new System.EventHandler(this.metodoDeLaSecanteToolStripMenuItem_Click);
             // 
             // metodoDeNewtonToolStripMenuItem
             // 
             this.metodoDeNewtonToolStripMenuItem.Name = "metodoDeNewtonToolStripMenuItem";
-            this.metodoDeNewtonToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.metodoDeNewtonToolStripMenuItem.Size = new System.Drawing.Size(283, 28);
             this.metodoDeNewtonToolStripMenuItem.Text = "Metodo de Newton";
             this.metodoDeNewtonToolStripMenuItem.Click += new System.EventHandler(this.metodoDeNewtonToolStripMenuItem_Click);
+            // 
+            // métodoDePuntoFijoToolStripMenuItem
+            // 
+            this.métodoDePuntoFijoToolStripMenuItem.Name = "métodoDePuntoFijoToolStripMenuItem";
+            this.métodoDePuntoFijoToolStripMenuItem.Size = new System.Drawing.Size(283, 28);
+            this.métodoDePuntoFijoToolStripMenuItem.Text = "Método de Punto Fijo";
+            this.métodoDePuntoFijoToolStripMenuItem.Click += new System.EventHandler(this.métodoDePuntoFijoToolStripMenuItem_Click);
             // 
             // frm
             // 
@@ -114,6 +123,7 @@
         private System.Windows.Forms.ToolStripMenuItem metodoDeMullerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem metodoDeLaSecanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem metodoDeNewtonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem métodoDePuntoFijoToolStripMenuItem;
     }
 }
 

@@ -45,5 +45,12 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void métodoDePuntoFijoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPuntoFijo f = new frmPuntoFijo();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }

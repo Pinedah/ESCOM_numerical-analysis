@@ -90,6 +90,12 @@
     <Compile Include="frmNewton.Designer.cs">
       <DependentUpon>frmNewton.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPuntoFijo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPuntoFijo.Designer.cs">
+      <DependentUpon>frmPuntoFijo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSecante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewton.resx">
       <DependentUpon>frmNewton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPuntoFijo.resx">
+      <DependentUpon>frmPuntoFijo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSecante.resx">
       <DependentUpon>frmSecante.cs</DependentUpon>
