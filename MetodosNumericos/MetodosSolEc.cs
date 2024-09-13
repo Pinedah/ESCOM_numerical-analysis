@@ -8,6 +8,10 @@ using System.Windows.Forms;
 using System.Numerics;
 using System.ComponentModel;
 
+// Libreria para diferenciar
+using MathNet.Symbolics;
+using Expr = MathNet.Symbolics.SymbolicExpression;
+
 namespace MetodosNumericos
 {
     internal class MetodosSolEc
@@ -186,12 +190,65 @@ namespace MetodosNumericos
             return false;
         }
 
+        public bool metNewton(float po, ref DataGridView dgvResultado)
+        {
+            // Metodo de Newton
+            int i;
+            float pi, errorActual;
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("Pi", "pi");
+            dgvResultado.Columns.Add("f_Pi", "fpi");
+            dgvResultado.Columns.Add("Fp_Pi", "fppi");
+            dgvResultado.Columns.Add("Aprox", "aprox");
+            dgvResultado.Columns.Add("error", "error");
+
+            i = 1;
+            while (i <= numMaxIter)
+            {
+
+                pi = po - (Func(po) / FuncPrima(po));
+                errorActual = Math.Abs(pi - po);
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = po;
+                dgvResultado.Rows[i - 1].Cells[2].Value = Func(pi);
+                dgvResultado.Rows[i - 1].Cells[3].Value = FuncPrima(pi);
+                dgvResultado.Rows[i - 1].Cells[4].Value = pi;
+                dgvResultado.Rows[i - 1].Cells[5].Value = errorActual;
+                // dgvResultado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+                if (errorActual <= errorMaximo)
+                {
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + pi.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+
+                po = pi;
+                i++;
+            }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
+
+        float FuncPrima(float x)
+        {
+            float r;
+            r = (float)(2 * x);
+            return r;
+        }
         float Func(float x)
         {
             float r;
             r = (float)(Math.Pow(x, 2) - 3.0);
             return r;
         }
+        
+
         Complex FuncCom(Complex x)
         {
             Complex r;

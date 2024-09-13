@@ -38,5 +38,12 @@ namespace MetodosNumericos
             f.WindowState = FormWindowState.Normal;
 
         }
+
+        private void metodoDeNewtonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNewton f = new frmNewton();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }
