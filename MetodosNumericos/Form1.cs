@@ -52,5 +52,12 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void métodoDeLaFalsaPosiciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFalsaPos f = new frmFalsaPos();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }

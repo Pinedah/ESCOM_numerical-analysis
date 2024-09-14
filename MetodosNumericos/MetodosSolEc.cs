@@ -30,6 +30,7 @@ namespace MetodosNumericos
             }
 
             dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
             dgvResultado.Columns.Add("iteracion", "i");
             dgvResultado.Columns.Add("valor_a", "a");
             dgvResultado.Columns.Add("valor_c", "c");
@@ -49,10 +50,10 @@ namespace MetodosNumericos
                 dgvResultado.Rows[i - 1].Cells[0].Value = i;
                 dgvResultado.Rows[i - 1].Cells[1].Value = a;
                 dgvResultado.Rows[i - 1].Cells[2].Value = c;
-                dgvResultado.Rows[i - 1].Cells[3].Value = c;
-                dgvResultado.Rows[i - 1].Cells[4].Value = Func(a);
-                dgvResultado.Rows[i - 1].Cells[5].Value = Func(c);
-                dgvResultado.Rows[i - 1].Cells[6].Value = Func(b);
+                dgvResultado.Rows[i - 1].Cells[3].Value = b;
+                dgvResultado.Rows[i - 1].Cells[4].Value = Func(a) > 0 ? '+' : '-';
+                dgvResultado.Rows[i - 1].Cells[5].Value = Func(c) > 0 ? '+' : '-';
+                dgvResultado.Rows[i - 1].Cells[6].Value = Func(b) > 0 ? '+' : '-';
                 dgvResultado.Rows[i - 1].Cells[7].Value = errorActual;
                 // dgvResultado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
@@ -70,6 +71,59 @@ namespace MetodosNumericos
                 i++;
             }
             MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+        public bool metodoFalsaPosicion(float a, float b, ref DataGridView dgvResultado)
+        {
+            float p, ErrorAct;
+            int i;
+            if (Func(a) * Func(b) > 0)
+            {
+                MessageBox.Show("No se puede aplicar el metodo de la falsa posición", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("valor_a", "a");
+            dgvResultado.Columns.Add("valor_c", "c");
+            dgvResultado.Columns.Add("valor_b", "b");
+            dgvResultado.Columns.Add("f_a", "f(a)");
+            dgvResultado.Columns.Add("f_c", "f(c)");
+            dgvResultado.Columns.Add("f_b", "f(b)");
+            dgvResultado.Columns.Add("error", "Error");
+            i = 1;
+            while (i < numMaxIter)
+            {
+                
+                p = b - (Func(b) * (b - a)) / (Func(b) - Func(a));
+                ErrorAct = (float)(Math.Abs(b - p) / Math.Pow((double)p, (double)2.0));
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = a;
+                dgvResultado.Rows[i - 1].Cells[2].Value = p;
+                dgvResultado.Rows[i - 1].Cells[3].Value = p;
+                dgvResultado.Rows[i - 1].Cells[4].Value = Func(a);
+                dgvResultado.Rows[i - 1].Cells[5].Value = Func(p);
+                dgvResultado.Rows[i - 1].Cells[6].Value = Func(b);
+                dgvResultado.Rows[i - 1].Cells[7].Value = ErrorAct;
+
+
+                if (ErrorAct <= errorMaximo)
+                {
+                    MessageBox.Show("Se obtuvo la aproximación raiz con el error deseado.\nRaiz =" + p.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                if (Func(a) * Func(p) < 0) { b = p; }
+                else
+                {
+                    a = p;
+                }
+                i++;
+
+            }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error indicado.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
         }
 
@@ -234,36 +288,6 @@ namespace MetodosNumericos
             return false;
                 
         }
-        public bool metodoFalsaPosicion(float a, float b)
-        {
-            float p, ErrorAct;
-            int i;
-            if (Func(a) * Func(b) > 0)
-            {
-                MessageBox.Show("No se puede aplicar el metodo de la falsa posición", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            i = 1;
-            while (i < numMaxIter)
-            {
-                p = b - (Func(b) * (b - a)) / (Func(b) - Func(a));
-                ErrorAct = (float)(Math.Abs(b - p) / Math.Pow((double)p, (double)2.0));
-                if (ErrorAct <= errorMaximo)
-                {
-                    MessageBox.Show("Se obtuvo la aproximación raiz con el error deseado.\nRaiz =" + p.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return true;
-                }
-                if (Func(a) * Func(p) < 0) { b = p; }
-                else
-                {
-                    a = p;
-                }
-                i++;
-
-            }
-            MessageBox.Show("No se pudo obtener la aproximacion con el error indicado.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            return false;
-        }
 
         public bool metNewton(float po, ref DataGridView dgvResultado)
         {
@@ -271,7 +295,8 @@ namespace MetodosNumericos
             int i;
             float pi, errorActual;
 
-            dgvResultado.Rows.Clear();
+            dgvResultado.Rows.Clear(); 
+            dgvResultado.Columns.Clear();
             dgvResultado.Columns.Add("iteracion", "i");
             dgvResultado.Columns.Add("Pi", "pi");
             dgvResultado.Columns.Add("f_Pi", "fpi");
@@ -315,6 +340,7 @@ namespace MetodosNumericos
             int i;
 
             dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
             dgvResultado.Columns.Add("iteracion", "i");
             dgvResultado.Columns.Add("Pi", "Pi");
             dgvResultado.Columns.Add("g_po", "g(Pi)");
