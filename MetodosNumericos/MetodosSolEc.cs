@@ -185,6 +185,7 @@ namespace MetodosNumericos
             {
                 p0Mp2=Complex.Subtract(p0, p2);
                 p0Mp1 = Complex.Subtract(p0, p1);
+                p1Mp2=Complex.Subtract(p1, p2);
                 Fp1MFp2 = Complex.Subtract(FuncCom(p1),FuncCom(p2));
                 Fp0MFp2 = Complex.Subtract(FuncCom(p1), FuncCom(p2));
                 divisor= Complex.Multiply(p0Mp2, p1Mp2);

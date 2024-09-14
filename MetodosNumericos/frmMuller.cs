@@ -35,19 +35,20 @@ namespace MetodosNumericos
 
         private void btn_calcular_Click(object sender, EventArgs e)
         {
-            Complex P0, P1,P2, errorMax;
+            Complex P0, P1,P2;
+            float errorMax;
             int numMaxIte;
             bool res;
 
             P0 = ParseComplex(txt_p0.Text);
             P1 = ParseComplex(txt_p1.Text);
             P2 = ParseComplex(txt_p2.Text);
-            errorMax = ParseComplex(ErrMaxMu.Text);
+            errorMax = float.Parse(ErrMaxMu.Text);
             numMaxIte = int.Parse(numMaxIterMu.Text);
 
             MetodosSolEc metodos = new MetodosSolEc();
             metodos.numMaxIter = numMaxIte;
-            metodos.errorMaximoComplex = errorMax;
+            metodos.errorMaximo = errorMax;
             res = metodos.metMuller2(P0,P1,P2, ref this.dgv_result);
         }
         private Complex ParseComplex(string input)
