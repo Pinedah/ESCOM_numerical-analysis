@@ -59,5 +59,10 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void frm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

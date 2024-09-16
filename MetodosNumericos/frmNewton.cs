@@ -20,12 +20,12 @@ namespace MetodosNumericos
         private void btn_calcular_Click(object sender, EventArgs e)
         {
 
-            float po, errorMax;
+            double po, errorMax;
             int numMaxIte;
             bool res;
 
-            po = float.Parse(txt_po.Text);
-            errorMax = float.Parse(ErrMax.Text);
+            po = double.Parse(txt_po.Text);
+            errorMax = double.Parse(ErrMax.Text);
             numMaxIte = int.Parse(numMaxIter.Text);
 
 

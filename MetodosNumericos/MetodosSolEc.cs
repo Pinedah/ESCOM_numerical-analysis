@@ -7,20 +7,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Numerics;
 using System.ComponentModel;
+using System.Drawing.Printing;
 
 namespace MetodosNumericos
 {
     internal class MetodosSolEc
     {
         public int numMaxIter;
-        public float errorMaximo;
+        public double errorMaximo;
         public Complex errorMaximoComplex;
         float AproxRaiz;
         Complex AproxRaizC;
 
-        public bool metBiseccion(float a, float b, ref DataGridView dgvResultado)
+        public bool metBiseccion(double a, double b, ref DataGridView dgvResultado)
         { // Metodo de biseccion
-            float c, errorActual;
+            double c, errorActual;
             int i;
 
             if(Func(a) * Func(b) > 0)
@@ -55,8 +56,6 @@ namespace MetodosNumericos
                 dgvResultado.Rows[i - 1].Cells[5].Value = Func(c) > 0 ? '+' : '-';
                 dgvResultado.Rows[i - 1].Cells[6].Value = Func(b) > 0 ? '+' : '-';
                 dgvResultado.Rows[i - 1].Cells[7].Value = errorActual;
-                // dgvResultado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
 
                 if (errorActual <= errorMaximo)
                 {
@@ -73,36 +72,39 @@ namespace MetodosNumericos
             MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
         }
-        public bool metodoFalsaPosicion(float a, float b, ref DataGridView dgvResultado)
+        public bool metodoFalsaPosicion(double a, double b, ref DataGridView dgvResultado)
         {
-            float p, ErrorAct;
+            double p, ErrorAct;
             int i;
             if (Func(a) * Func(b) > 0)
             {
                 MessageBox.Show("No se puede aplicar el metodo de la falsa posición", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+         
             dgvResultado.Rows.Clear();
             dgvResultado.Columns.Clear();
             dgvResultado.Columns.Add("iteracion", "i");
             dgvResultado.Columns.Add("valor_a", "a");
-            dgvResultado.Columns.Add("valor_c", "c");
             dgvResultado.Columns.Add("valor_b", "b");
+            dgvResultado.Columns.Add("valor_p", "p");
             dgvResultado.Columns.Add("f_a", "f(a)");
-            dgvResultado.Columns.Add("f_c", "f(c)");
             dgvResultado.Columns.Add("f_b", "f(b)");
+            dgvResultado.Columns.Add("f_p", "f(p)");
             dgvResultado.Columns.Add("error", "Error");
             i = 1;
             while (i < numMaxIter)
             {
                 
                 p = b - (Func(b) * (b - a)) / (Func(b) - Func(a));
-                ErrorAct = (float)(Math.Abs(b - p) / Math.Pow((double)p, (double)2.0));
+
+                //ErrorAct = (double)(Math.Abs(b - p) / Math.Pow((double)p, (double)2.0));
+                ErrorAct = (double)(Math.Abs(b - p));
 
                 dgvResultado.Rows.Add();
                 dgvResultado.Rows[i - 1].Cells[0].Value = i;
                 dgvResultado.Rows[i - 1].Cells[1].Value = a;
-                dgvResultado.Rows[i - 1].Cells[2].Value = p;
+                dgvResultado.Rows[i - 1].Cells[2].Value = b;
                 dgvResultado.Rows[i - 1].Cells[3].Value = p;
                 dgvResultado.Rows[i - 1].Cells[4].Value = Func(a);
                 dgvResultado.Rows[i - 1].Cells[5].Value = Func(p);
@@ -115,7 +117,11 @@ namespace MetodosNumericos
                     MessageBox.Show("Se obtuvo la aproximación raiz con el error deseado.\nRaiz =" + p.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
-                if (Func(a) * Func(p) < 0) { b = p; }
+
+                if (Func(a) * Func(p) < 0) 
+                { 
+                    b = p; 
+                }
                 else
                 {
                     a = p;
@@ -127,9 +133,9 @@ namespace MetodosNumericos
             return false;
         }
 
-        public bool metSecante(float a, float b, ref DataGridView dgvResultado)
+        public bool metSecante(double a, double b, ref DataGridView dgvResultado)
         { // Metodo de la secante
-            float c, errorActual;
+            double c, errorActual;
             int i;
 
             dgvResultado.Rows.Clear();
@@ -160,7 +166,6 @@ namespace MetodosNumericos
                 dgvResultado.Rows[i - 1].Cells[5].Value = Func(c);
                 dgvResultado.Rows[i - 1].Cells[6].Value = Func(b);
                 dgvResultado.Rows[i - 1].Cells[7].Value = errorActual;
-                // dgvResultado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
 
                 if (errorActual <= errorMaximo)
@@ -214,7 +219,7 @@ namespace MetodosNumericos
         }
         public bool metMuller2(Complex p0, Complex p1, Complex p2, ref DataGridView dgvResultado)
         { // Metodo de Muller
-            float ErrorAct;
+            double ErrorAct;
             Complex p=new Complex(),a=new Complex(),b=new Complex(),c=new Complex();
             Complex Fp1MFp2 = new Complex();
             Complex Fp0MFp2= new Complex();
@@ -263,7 +268,7 @@ namespace MetodosNumericos
                 p = Complex.Subtract(p2, Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
 
 
-                ErrorAct = (float)Complex.Abs(Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
+                ErrorAct = (double)Complex.Abs(Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
 
                 dgvResultado.Rows.Add();
                 dgvResultado.Rows[i - 1].Cells[0].Value = i;
@@ -289,11 +294,11 @@ namespace MetodosNumericos
                 
         }
 
-        public bool metNewton(float po, ref DataGridView dgvResultado)
+        public bool metNewton(double po, ref DataGridView dgvResultado)
         {
             // Metodo de Newton
             int i;
-            float pi, errorActual;
+            double pi, errorActual;
 
             dgvResultado.Rows.Clear(); 
             dgvResultado.Columns.Clear();
@@ -334,9 +339,9 @@ namespace MetodosNumericos
             return false;
         }
 
-        public bool metPFijo(float po, ref DataGridView dgvResultado)
+        public bool metPFijo(double po, ref DataGridView dgvResultado)
         {
-            float errorActual;
+            double errorActual;
             int i;
 
             dgvResultado.Rows.Clear();
@@ -371,26 +376,25 @@ namespace MetodosNumericos
 
             MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
-
         }
 
-        float FuncPrima(float x)
+        double FuncPrima(double x)
         {
-            float r;
-            r = (float)(2 * x);
+            double r;
+            r = (double)(2 * x);
             return r;
         }
-        float Func(float x)
+        double Func(double x)
         {
-            float r;
-            r = (float)(Math.Pow(x, 2) - 3.0);
+            double r;
+            r = (double)(Math.Pow(x, 2) - 3.0);
             return r;
         }
 
-        float FuncPF(float x)
+        double FuncPF(double x)
         {
-            float r;
-            r = (float)(x - (Math.Pow(x, 3) + 4 * x * x - 10) / (3 * x * x + 8 * x));
+            double r;
+            r = (double)(x - (Math.Pow(x, 3) + 4 * x * x - 10) / (3 * x * x + 8 * x));
             return r;
         }
         

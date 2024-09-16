@@ -23,13 +23,13 @@ namespace MetodosNumericos
 
         private void btn_calcular_Click(object sender, EventArgs e)
         {
-            float a, b, errorMax;
+            double a, b, errorMax;
             int numMaxIte;
             bool res;
 
-            a = float.Parse(tf_a.Text);
-            b = float.Parse(tf_b.Text);
-            errorMax = float.Parse(ErrMax.Text);
+            a = double.Parse(tf_a.Text);
+            b = double.Parse(tf_b.Text);
+            errorMax = double.Parse(ErrMax.Text);
             numMaxIte = int.Parse(numMaxIter.Text);
 
             MetodosSolEc metodos = new MetodosSolEc();

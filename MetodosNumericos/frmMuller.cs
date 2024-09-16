@@ -36,14 +36,14 @@ namespace MetodosNumericos
         private void btn_calcular_Click(object sender, EventArgs e)
         {
             Complex P0, P1,P2;
-            float errorMax;
+            double errorMax;
             int numMaxIte;
             bool res;
 
             P0 = ParseComplex(txt_p0.Text);
             P1 = ParseComplex(txt_p1.Text);
             P2 = ParseComplex(txt_p2.Text);
-            errorMax = float.Parse(ErrMaxMu.Text);
+            errorMax = double.Parse(ErrMaxMu.Text);
             numMaxIte = int.Parse(numMaxIterMu.Text);
 
             MetodosSolEc metodos = new MetodosSolEc();

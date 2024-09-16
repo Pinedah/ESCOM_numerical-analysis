@@ -56,7 +56,7 @@
             // txt_po
             // 
             this.txt_po.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_po.Location = new System.Drawing.Point(568, 82);
+            this.txt_po.Location = new System.Drawing.Point(561, 82);
             this.txt_po.Name = "txt_po";
             this.txt_po.Size = new System.Drawing.Size(100, 29);
             this.txt_po.TabIndex = 29;
@@ -65,7 +65,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(541, 85);
+            this.label4.Location = new System.Drawing.Point(525, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 22);
             this.label4.TabIndex = 28;
@@ -138,6 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumPurple;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.btn_calcular);
             this.Controls.Add(this.txt_po);
