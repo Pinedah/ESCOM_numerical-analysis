@@ -458,8 +458,8 @@ namespace MetodosNumericos
             while (i <= numMaxIter)
             {
                 c = (a + b) / 2;
-                errorActual = (b - a) / 2; 
-                
+                errorActual = (b - a) / 2;
+                p = 0;
 
                 dgvResultado.Rows.Add();
                 dgvResultado.Rows[i - 1].Cells[0].Value = i;
