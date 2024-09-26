@@ -422,6 +422,86 @@ namespace MetodosNumericos
             return false;
         }
 
+        public bool metBiseccionAitken(double a, double b, ref DataGridView dgvResultado)
+        { // Metodo de biseccion usando Aitken
+            double c, errorActual, p;
+            int i;
+
+            if (Func(a) * Func(b) > 0)
+            {
+                MessageBox.Show("No se puede aplicar el metodo de Biseccion", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+
+            dgvResultado.Columns.Add("valor_a1", "a");
+            dgvResultado.Columns.Add("valor_c1", "c1");
+            dgvResultado.Columns.Add("valor_b3", "b");
+            
+            dgvResultado.Columns.Add("valor_a2", "a");
+            dgvResultado.Columns.Add("valor_c2", "c2");
+            dgvResultado.Columns.Add("valor_b2", "b");
+            
+            dgvResultado.Columns.Add("valor_a3", "a");
+            dgvResultado.Columns.Add("valor_c3", "c3");
+            dgvResultado.Columns.Add("valor_b3", "b");
+
+            dgvResultado.Columns.Add("puntoAitken", "P");
+            dgvResultado.Columns.Add("error", "Error");
+
+
+
+            i = 1;
+            while (i <= numMaxIter)
+            {
+                c = (a + b) / 2;
+                errorActual = (b - a) / 2; 
+                
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                
+                dgvResultado.Rows[i - 1].Cells[1].Value = a;
+                dgvResultado.Rows[i - 1].Cells[2].Value = c;
+                dgvResultado.Rows[i - 1].Cells[3].Value = b;
+
+                dgvResultado.Rows[i - 1].Cells[4].Value = a;
+                dgvResultado.Rows[i - 1].Cells[5].Value = c;
+                dgvResultado.Rows[i - 1].Cells[6].Value = b;
+
+                dgvResultado.Rows[i - 1].Cells[7].Value = a;
+                dgvResultado.Rows[i - 1].Cells[8].Value = c;
+                dgvResultado.Rows[i - 1].Cells[9].Value = b;
+
+                dgvResultado.Rows[i - 1].Cells[10].Value = p;
+                dgvResultado.Rows[i - 1].Cells[11].Value = errorActual;
+
+                if (errorActual <= errorMaximo)
+                {
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                if (Func(a) * Func(c) < 0)
+                    b = c;
+                else
+                    a = c;
+
+                i++;
+            }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
+        private double Func_G2(double x)
+        {
+            double r;
+            r = Math.Pow(x, 3) + 4*Math.Pow(x, 2) - 10;
+            return r;
+        }
+
         private double Func_G(double x)
         {
             double r;
