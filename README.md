@@ -1,11 +1,11 @@
 
-# Numerical Methods - Class Repository
+# Numerical Analysis - Class Repository
 
-Welcome to my **Numerical Methods** class repository! This repository contains the code and projects that I will be developing during my Numerical Methods course as part of my **Data Science** studies at **IPN | ESCOM**.
+Welcome to my **Numerical Analysis** class repository! This repository contains the code and projects that I will be developing during my Numerical Methods course as part of my **Data Science** studies at **IPN | ESCOM**.
 
 ## About This Course
 
-The Numerical Methods course is focused on the development and application of computational techniques to solve mathematical problems that are typically difficult to solve analytically. Topics may include:
+The Numerical Analysis course is focused on the development and application of computational techniques to solve mathematical problems that are typically difficult to solve analytically. Topics may include:
 
 - Root Finding Algorithms
 - Numerical Integration and Differentiation
@@ -22,7 +22,7 @@ This repository will be organized by topic, with directories corresponding to ea
 
 - **University**: IPN | Escuela Superior de Cómputo (ESCOM)
 - **Program**: Data Science
-- **Course**: Numerical Methods
+- **Course**: Numerical Analysis
 
 ## How to Use This Repository
 
