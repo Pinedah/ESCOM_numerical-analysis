@@ -35,5 +35,45 @@ namespace MetodosNumericos
 
             metodosSolEc.metPFijo(po, ref this.dgv_result);
         }
+
+        private void txt_po_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ErrMax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numMaxIter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_result_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

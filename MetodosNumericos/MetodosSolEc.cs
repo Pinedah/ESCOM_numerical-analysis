@@ -378,6 +378,62 @@ namespace MetodosNumericos
             return false;
         }
 
+        public bool metSteffensen(double po, ref DataGridView dgvResultado)
+        {
+            double errorActual, p1, p2, p;
+            int i;
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("Po", "Po");
+            dgvResultado.Columns.Add("P1", "P1");
+            dgvResultado.Columns.Add("P2", "P2");
+            dgvResultado.Columns.Add("P", "P");
+            dgvResultado.Columns.Add("error", "Error");
+
+            i = 1;
+            while(i <= numMaxIter)
+            {
+
+
+                p1 = Func_G(po);
+                p2 = Func_G(p1);
+                p = puntoAitken(po, p1, p2);
+                errorActual = Math.Abs(p - p2);
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = po;
+                dgvResultado.Rows[i - 1].Cells[2].Value = p1;
+                dgvResultado.Rows[i - 1].Cells[3].Value = p2;
+                dgvResultado.Rows[i - 1].Cells[4].Value = p;
+                dgvResultado.Rows[i - 1].Cells[5].Value = errorActual;
+
+                if (errorActual <= errorMaximo)
+                {
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + po.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                po = p;
+                i++;
+            }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
+        private double Func_G(double x)
+        {
+            double r;
+            r = Math.Sqrt(10/(x + 4));
+            return r;
+        }
+
+        double puntoAitken(double a, double b, double c)
+        {
+            return (double)(a - (Math.Pow((b - a), 2) / (c - 2 * b + a)));
+        }
+
         double FuncPrima(double x)
         {
             double r;

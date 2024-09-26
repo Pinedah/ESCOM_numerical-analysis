@@ -64,5 +64,12 @@ namespace MetodosNumericos
         {
 
         }
+
+        private void métodoDeSteffensenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSteffensen f = new frmSteffensen();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }

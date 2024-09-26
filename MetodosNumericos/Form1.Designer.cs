@@ -36,6 +36,7 @@
             this.metodoDeNewtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.métodoDePuntoFijoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.métodoDeLaFalsaPosiciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.métodoDeSteffensenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,8 @@
             this.metodoDeLaSecanteToolStripMenuItem,
             this.metodoDeNewtonToolStripMenuItem,
             this.métodoDePuntoFijoToolStripMenuItem,
-            this.métodoDeLaFalsaPosiciónToolStripMenuItem});
+            this.métodoDeLaFalsaPosiciónToolStripMenuItem,
+            this.métodoDeSteffensenToolStripMenuItem});
             this.raicesDeEcuacionesToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.raicesDeEcuacionesToolStripMenuItem.Name = "raicesDeEcuacionesToolStripMenuItem";
             this.raicesDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(221, 28);
@@ -108,6 +110,13 @@
             this.métodoDeLaFalsaPosiciónToolStripMenuItem.Text = "Método de la Falsa posición";
             this.métodoDeLaFalsaPosiciónToolStripMenuItem.Click += new System.EventHandler(this.métodoDeLaFalsaPosiciónToolStripMenuItem_Click);
             // 
+            // métodoDeSteffensenToolStripMenuItem
+            // 
+            this.métodoDeSteffensenToolStripMenuItem.Name = "métodoDeSteffensenToolStripMenuItem";
+            this.métodoDeSteffensenToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.métodoDeSteffensenToolStripMenuItem.Text = "Método de Steffensen";
+            this.métodoDeSteffensenToolStripMenuItem.Click += new System.EventHandler(this.métodoDeSteffensenToolStripMenuItem_Click);
+            // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +144,7 @@
         private System.Windows.Forms.ToolStripMenuItem metodoDeNewtonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem métodoDePuntoFijoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem métodoDeLaFalsaPosiciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem métodoDeSteffensenToolStripMenuItem;
     }
 }
 
