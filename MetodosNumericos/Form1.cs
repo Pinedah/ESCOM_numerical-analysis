@@ -71,5 +71,12 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void métodoDeBiseccionAitkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBiseccion_Aitken f = new frmBiseccion_Aitken();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;    
+        }
     }
 }
