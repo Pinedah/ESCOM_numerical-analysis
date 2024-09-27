@@ -382,7 +382,7 @@ namespace MetodosNumericos
         {
             double errorActual, p1, p2, p;
             int i;
-
+            
             dgvResultado.Rows.Clear();
             dgvResultado.Columns.Clear();
             dgvResultado.Columns.Add("iteracion", "i");
@@ -426,6 +426,9 @@ namespace MetodosNumericos
         { // Metodo de biseccion usando Aitken
             double c, errorActual, p;
             int i;
+            string aS, bS, cS,pS;
+            double distanciaMinima = double.MaxValue;
+            double nuevoA = a, nuevoB = b;
 
             if (Func(a) * Func(b) > 0)
             {
@@ -457,37 +460,81 @@ namespace MetodosNumericos
             i = 1;
             while (i <= numMaxIter)
             {
-                c = (a + b) / 2;
-                errorActual = (b - a) / 2;
-                p = 0;
-
+                double[] arr = new double[3];
                 dgvResultado.Rows.Add();
                 dgvResultado.Rows[i - 1].Cells[0].Value = i;
-                
-                dgvResultado.Rows[i - 1].Cells[1].Value = a;
-                dgvResultado.Rows[i - 1].Cells[2].Value = c;
-                dgvResultado.Rows[i - 1].Cells[3].Value = b;
+                for (int j = 0; j < 2; j++)
+                {
+                    c = (a + b) / 2;
+                    arr[j] = c;
+                    aS = a.ToString() + " | " + (Func_G2(a) > 0 ? '+' : '-');
+                    bS = b.ToString() +  " | " + (Func_G2(b) > 0 ? '+' : '-');
+                    cS = c.ToString() + " | " + (Func_G2(c) > 0 ? '+' : '-');
+                    int cellBaseIndex = (j == 0) ? 1 : 4;
+                    dgvResultado.Rows[i - 1].Cells[cellBaseIndex].Value = aS;
+                    dgvResultado.Rows[i - 1].Cells[cellBaseIndex + 1].Value = cS;
+                    dgvResultado.Rows[i - 1].Cells[cellBaseIndex + 2].Value = bS;
 
-                dgvResultado.Rows[i - 1].Cells[4].Value = a;
-                dgvResultado.Rows[i - 1].Cells[5].Value = c;
-                dgvResultado.Rows[i - 1].Cells[6].Value = b;
+                    if (Func_G2(a) * Func_G2(c) < 0)
+                        b = c;
+                    else
+                        a = c;
+                }
+                c = (a + b) / 2;
+                arr[2] = c;
+                aS = a.ToString() + " | " + (Func_G2(a) > 0 ? '+' : '-');
+                bS = b.ToString() + " | " + (Func_G2(b) > 0 ? '+' : '-');
+                cS = c.ToString() + " | " + (Func_G2(c) > 0 ? '+' : '-');
+                dgvResultado.Rows[i - 1].Cells[7].Value = aS;
+                dgvResultado.Rows[i - 1].Cells[8].Value = cS;
+                dgvResultado.Rows[i - 1].Cells[9].Value = bS;
+                p = puntoAitken(arr[0], arr[1], arr[2]);
+                pS = p.ToString() + " | " + (Func_G2(p) > 0 ? '+' : '-');
+                dgvResultado.Rows[i - 1].Cells[10].Value = pS;
+                distanciaMinima = double.MaxValue;
 
-                dgvResultado.Rows[i - 1].Cells[7].Value = a;
-                dgvResultado.Rows[i - 1].Cells[8].Value = c;
-                dgvResultado.Rows[i - 1].Cells[9].Value = b;
+                if (Func_G2(a) * Func_G2(c) < 0)
+                {
+                    double distancia = Math.Abs(a - c);
+                    if (distancia < distanciaMinima)
+                    {
+                        distanciaMinima = distancia;
+                        nuevoA = a;
+                        nuevoB = c;
+                    }
+                }
 
-                dgvResultado.Rows[i - 1].Cells[10].Value = p;
+                if (Func_G2(b) * Func_G2(c) < 0)
+                {
+                    double distancia = Math.Abs(b - c);
+                    if (distancia < distanciaMinima)
+                    {
+                        distanciaMinima = distancia;
+                        nuevoA = c;
+                        nuevoB = b;
+                    }
+                }
+
+                if (Func_G2(c) * Func_G2(p) < 0)
+                {
+                    double distancia = Math.Abs(c - p);
+                    if (distancia < distanciaMinima)
+                    {
+                        distanciaMinima = distancia;
+                        nuevoA = c;
+                        nuevoB = p;
+                    }
+                }
+                a = nuevoA;
+                b = nuevoB;
+                errorActual = Math.Abs((b - a) / 2);
                 dgvResultado.Rows[i - 1].Cells[11].Value = errorActual;
 
                 if (errorActual <= errorMaximo)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + p.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
-                if (Func(a) * Func(c) < 0)
-                    b = c;
-                else
-                    a = c;
 
                 i++;
             }

@@ -78,6 +78,12 @@
     <Compile Include="frmBiseccion.Designer.cs">
       <DependentUpon>frmBiseccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBiseccionAitken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBiseccionAitken.Designer.cs">
+      <DependentUpon>frmBiseccionAitken.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMuller.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBiseccion.resx">
       <DependentUpon>frmBiseccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBiseccionAitken.resx">
+      <DependentUpon>frmBiseccionAitken.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMuller.resx">
       <DependentUpon>frmMuller.cs</DependentUpon>
