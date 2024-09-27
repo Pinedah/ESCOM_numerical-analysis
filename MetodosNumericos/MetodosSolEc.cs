@@ -160,7 +160,7 @@ namespace MetodosNumericos
                 dgvResultado.Rows.Add();
                 dgvResultado.Rows[i - 1].Cells[0].Value = i;
                 dgvResultado.Rows[i - 1].Cells[1].Value = a;
-                dgvResultado.Rows[i - 1].Cells[2].Value = c;
+                dgvResultado.Rows[i - 1].Cells[2].Value = b;
                 dgvResultado.Rows[i - 1].Cells[3].Value = c;
                 dgvResultado.Rows[i - 1].Cells[4].Value = Func(a);
                 dgvResultado.Rows[i - 1].Cells[5].Value = Func(c);
@@ -537,6 +537,54 @@ namespace MetodosNumericos
                 }
 
                 i++;
+            }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
+        public bool metSecanteAitken(double a, double b, ref DataGridView dgvResultado)
+        { // Metodo de la secante
+            double c, errorActual, P;
+            int i;
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("valor_a", "a");
+            dgvResultado.Columns.Add("valor_b", "b");
+            dgvResultado.Columns.Add("valor_c", "c");
+            dgvResultado.Columns.Add("valor_PAitken", "P Aitken");
+            dgvResultado.Columns.Add("error", "Error");
+
+            i = 1;
+            while (i <= numMaxIter)
+            {
+                // p = a - (f(a)*(b-a))/(f(b)-f(a));
+                c = a - ((Func_G2(a) * (b - a)) / (Func_G2(b) - Func_G2(a)));
+                errorActual = Math.Abs((c - b));
+
+                P = puntoAitken(a, b, c);
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = a;
+                dgvResultado.Rows[i - 1].Cells[2].Value = b;
+                dgvResultado.Rows[i - 1].Cells[3].Value = c;
+                dgvResultado.Rows[i - 1].Cells[4].Value = P;
+                dgvResultado.Rows[i - 1].Cells[5].Value = errorActual;
+
+
+                if (errorActual <= errorMaximo)
+                {
+                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+
+                a = P;
+                b = c;
+
+                i++;
+
             }
             MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;

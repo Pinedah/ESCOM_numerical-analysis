@@ -114,6 +114,12 @@
     <Compile Include="frmFalsaPos.Designer.cs">
       <DependentUpon>frmFalsaPos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSecanteAitken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecanteAitken.Designer.cs">
+      <DependentUpon>frmSecanteAitken.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSteffensen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFalsaPos.resx">
       <DependentUpon>frmFalsaPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecanteAitken.resx">
+      <DependentUpon>frmSecanteAitken.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSteffensen.resx">
       <DependentUpon>frmSteffensen.cs</DependentUpon>

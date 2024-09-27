@@ -38,6 +38,7 @@
             this.métodoDeLaFalsaPosiciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.métodoDeSteffensenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.métodoDeBiseccionAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.métodoDeLaSecanteAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,8 @@
             this.métodoDePuntoFijoToolStripMenuItem,
             this.métodoDeLaFalsaPosiciónToolStripMenuItem,
             this.métodoDeSteffensenToolStripMenuItem,
-            this.métodoDeBiseccionAitkenToolStripMenuItem});
+            this.métodoDeBiseccionAitkenToolStripMenuItem,
+            this.métodoDeLaSecanteAitkenToolStripMenuItem});
             this.raicesDeEcuacionesToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.raicesDeEcuacionesToolStripMenuItem.Name = "raicesDeEcuacionesToolStripMenuItem";
             this.raicesDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(221, 28);
@@ -73,58 +75,65 @@
             // 
             this.metodoDeBiseccionToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.metodoDeBiseccionToolStripMenuItem.Name = "metodoDeBiseccionToolStripMenuItem";
-            this.metodoDeBiseccionToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.metodoDeBiseccionToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
             this.metodoDeBiseccionToolStripMenuItem.Text = "Metodo de Biseccion";
             this.metodoDeBiseccionToolStripMenuItem.Click += new System.EventHandler(this.metodoDeBiseccionToolStripMenuItem_Click);
             // 
             // metodoDeMullerToolStripMenuItem
             // 
             this.metodoDeMullerToolStripMenuItem.Name = "metodoDeMullerToolStripMenuItem";
-            this.metodoDeMullerToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.metodoDeMullerToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
             this.metodoDeMullerToolStripMenuItem.Text = "Metodo de Muller";
             this.metodoDeMullerToolStripMenuItem.Click += new System.EventHandler(this.metodoDeMullerToolStripMenuItem_Click);
             // 
             // metodoDeLaSecanteToolStripMenuItem
             // 
             this.metodoDeLaSecanteToolStripMenuItem.Name = "metodoDeLaSecanteToolStripMenuItem";
-            this.metodoDeLaSecanteToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.metodoDeLaSecanteToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
             this.metodoDeLaSecanteToolStripMenuItem.Text = "Metodo de la Secante";
             this.metodoDeLaSecanteToolStripMenuItem.Click += new System.EventHandler(this.metodoDeLaSecanteToolStripMenuItem_Click);
             // 
             // metodoDeNewtonToolStripMenuItem
             // 
             this.metodoDeNewtonToolStripMenuItem.Name = "metodoDeNewtonToolStripMenuItem";
-            this.metodoDeNewtonToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.metodoDeNewtonToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
             this.metodoDeNewtonToolStripMenuItem.Text = "Metodo de Newton";
             this.metodoDeNewtonToolStripMenuItem.Click += new System.EventHandler(this.metodoDeNewtonToolStripMenuItem_Click);
             // 
             // métodoDePuntoFijoToolStripMenuItem
             // 
             this.métodoDePuntoFijoToolStripMenuItem.Name = "métodoDePuntoFijoToolStripMenuItem";
-            this.métodoDePuntoFijoToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.métodoDePuntoFijoToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
             this.métodoDePuntoFijoToolStripMenuItem.Text = "Método de Punto Fijo";
             this.métodoDePuntoFijoToolStripMenuItem.Click += new System.EventHandler(this.métodoDePuntoFijoToolStripMenuItem_Click);
             // 
             // métodoDeLaFalsaPosiciónToolStripMenuItem
             // 
             this.métodoDeLaFalsaPosiciónToolStripMenuItem.Name = "métodoDeLaFalsaPosiciónToolStripMenuItem";
-            this.métodoDeLaFalsaPosiciónToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.métodoDeLaFalsaPosiciónToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
             this.métodoDeLaFalsaPosiciónToolStripMenuItem.Text = "Método de la Falsa posición";
             this.métodoDeLaFalsaPosiciónToolStripMenuItem.Click += new System.EventHandler(this.métodoDeLaFalsaPosiciónToolStripMenuItem_Click);
             // 
             // métodoDeSteffensenToolStripMenuItem
             // 
             this.métodoDeSteffensenToolStripMenuItem.Name = "métodoDeSteffensenToolStripMenuItem";
-            this.métodoDeSteffensenToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.métodoDeSteffensenToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
             this.métodoDeSteffensenToolStripMenuItem.Text = "Método de Steffensen";
             this.métodoDeSteffensenToolStripMenuItem.Click += new System.EventHandler(this.métodoDeSteffensenToolStripMenuItem_Click);
             // 
             // métodoDeBiseccionAitkenToolStripMenuItem
             // 
             this.métodoDeBiseccionAitkenToolStripMenuItem.Name = "métodoDeBiseccionAitkenToolStripMenuItem";
-            this.métodoDeBiseccionAitkenToolStripMenuItem.Size = new System.Drawing.Size(343, 28);
+            this.métodoDeBiseccionAitkenToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
             this.métodoDeBiseccionAitkenToolStripMenuItem.Text = "Método de Biseccion-Aitken";
             this.métodoDeBiseccionAitkenToolStripMenuItem.Click += new System.EventHandler(this.métodoDeBiseccionAitkenToolStripMenuItem_Click);
+            // 
+            // métodoDeLaSecanteAitkenToolStripMenuItem
+            // 
+            this.métodoDeLaSecanteAitkenToolStripMenuItem.Name = "métodoDeLaSecanteAitkenToolStripMenuItem";
+            this.métodoDeLaSecanteAitkenToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
+            this.métodoDeLaSecanteAitkenToolStripMenuItem.Text = "Método de la Secante-Aitken";
+            this.métodoDeLaSecanteAitkenToolStripMenuItem.Click += new System.EventHandler(this.métodoDeLaSecanteAitkenToolStripMenuItem_Click);
             // 
             // frm
             // 
@@ -155,6 +164,7 @@
         private System.Windows.Forms.ToolStripMenuItem métodoDeLaFalsaPosiciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem métodoDeSteffensenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem métodoDeBiseccionAitkenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem métodoDeLaSecanteAitkenToolStripMenuItem;
     }
 }
 

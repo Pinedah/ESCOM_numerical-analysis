@@ -78,5 +78,12 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;    
         }
+
+        private void métodoDeLaSecanteAitkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSecanteAitken f = new frmSecanteAitken();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }
