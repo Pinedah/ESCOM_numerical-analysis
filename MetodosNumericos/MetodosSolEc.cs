@@ -191,6 +191,7 @@ namespace MetodosNumericos
             i = 1;
             Complex D,a,b,c;
             Complex p3;
+            
             Complex negativo = new Complex(0, 0);
             while (i <= numMaxIter)
             {
@@ -215,7 +216,7 @@ namespace MetodosNumericos
                 i++;
             }
             MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            return false;
+            return  false;
         }
         public bool metMuller2(Complex p0, Complex p1, Complex p2, ref DataGridView dgvResultado)
         { // Metodo de Muller
@@ -290,6 +291,7 @@ namespace MetodosNumericos
                 i++;
 
             }
+            MessageBox.Show("No se pudo obtener la aproximacion con el error deseado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
                 
         }
@@ -590,6 +592,13 @@ namespace MetodosNumericos
             return false;
         }
 
+        public bool deflacion(Complex p0, Complex p1, Complex p2, int n, ref DataGridView dgvResultado)
+        {
+            Complex[] arrA = new Complex[n];
+            Complex[] arrB = new Complex[n];
+
+            return false;
+        }
         private double Func_G2(double x)
         {
             double r;
@@ -633,7 +642,7 @@ namespace MetodosNumericos
         Complex FuncCom(Complex x)
         {
             Complex r;
-            r = (Complex)(Complex.Pow(x,2) - 3);
+            r = (Complex)(Complex.Pow(x,2) + Complex.Multiply(x,5.365230) + 7.324772);
             return r;
         }
         public static string ComplexToString(Complex complex)
