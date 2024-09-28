@@ -199,7 +199,6 @@ namespace MetodosNumericos
                 a = ((p1-p2)*(FuncCom(p0)-FuncCom(p2))- (p0 - p2) * (FuncCom(p1) - FuncCom(p2)))/D;
                 b = ((Complex.Pow(p0-p2,2)*(FuncCom(p1)- FuncCom(p2))) - (Complex.Pow(p1 - p2, 2) * (FuncCom(p0) - FuncCom(p2)))) / D;
                 c = FuncCom(p2);
-                string result;
                 Complex discriminant = Complex.Sqrt(Complex.Pow(b, 2) - 4 * a * c);
                 Complex denominator = b + (b.Real >= 0 ? discriminant : -discriminant);
                 p3 = p2 - (2 * c / denominator);
@@ -230,7 +229,6 @@ namespace MetodosNumericos
             Complex divisor = new Complex();
             Complex D = new Complex();
             Complex E = new Complex();
-            Complex Aux = new Complex();
             int i;
             dgvResultado.Rows.Clear();
             dgvResultado.Columns.Clear();
@@ -592,12 +590,81 @@ namespace MetodosNumericos
             return false;
         }
 
-        public bool deflacion(Complex p0, Complex p1, Complex p2, int n, ref DataGridView dgvResultado)
+        public bool deflacion(Complex p0, Complex p1, Complex p2, Complex[] arrA, ref DataGridView dgvResultado)
         {
-            Complex[] arrA = new Complex[n];
-            Complex[] arrB = new Complex[n];
+            Complex[] arrSol = new Complex[arrA.Length-1];
+            Complex[] arrAux = new Complex[arrA.Length - 1];
+            Array.Copy(arrA, arrAux, arrA.Length);
+            Complex x0 = new Complex();
+            //Variables de muller
+            double ErrorAct;
+            Complex p = new Complex(), a = new Complex(), b = new Complex(), c = new Complex();
+            Complex Fp1MFp2 = new Complex();
+            Complex Fp0MFp2 = new Complex();
+            Complex p0Mp2 = new Complex();
+            Complex p1Mp2 = new Complex();
+            Complex p0Mp1 = new Complex();
+            Complex divisor = new Complex();
+            Complex D = new Complex();
+            Complex E = new Complex();
+            for(int i=arrAux.Length - 1; i>=0; i--)
+            {
+                Complex[] arrB = new Complex[arrAux.Length - 1];
+                arrB[arrAux.Length - 1] = arrAux[arrAux.Length - 1];
+                int j = 1;
+                while (j <= numMaxIter)
+                {
 
-            return false;
+                    p0Mp2 = Complex.Subtract(p0, p2);
+                    p0Mp1 = Complex.Subtract(p0, p1);
+                    p1Mp2 = Complex.Subtract(p1, p2);
+                    Fp1MFp2 = Complex.Subtract(FuncComDeflacion(p1,arrAux), FuncComDeflacion(p2, arrAux));
+                    Fp0MFp2 = Complex.Subtract(FuncComDeflacion(p0, arrAux), FuncComDeflacion(p2, arrAux));
+                    divisor = Complex.Multiply(p0Mp2, p1Mp2);
+                    divisor = Complex.Multiply(divisor, p0Mp1);
+                    c = FuncComDeflacion(p2, arrAux);
+                    b = Complex.Subtract(Complex.Multiply(Complex.Pow(p0Mp2, 2), Fp1MFp2), Complex.Multiply(Complex.Pow(p1Mp2, 2), Fp0MFp2));
+                    b = Complex.Divide(b, divisor);
+
+                    a = Complex.Subtract(Complex.Multiply(p1Mp2, Fp0MFp2), Complex.Multiply(p0Mp2, Fp1MFp2));
+                    a = Complex.Divide(a, divisor);
+
+                    D = Complex.Sqrt(Complex.Subtract(Complex.Pow(b, 2), Complex.Multiply(new Complex(4, 0), Complex.Multiply(a, c))));
+                    if (Complex.Abs(Complex.Subtract(b, D)) < Complex.Abs(Complex.Add(b, D)))
+                    {
+                        E = Complex.Add(b, D);
+                    }
+                    else
+                    {
+                        E = Complex.Subtract(b, D);
+                    }
+                    p = Complex.Subtract(p2, Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
+                    ErrorAct = (double)Complex.Abs(Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
+                    if (ErrorAct <= errorMaximo)
+                    {
+                        x0 = p;
+                        arrB[i] = arrAux[i] + Complex.Multiply(x0, arrB[i+1]);
+                        arrSol[arrA.Length-1-i] = p;
+                        break;
+                    }
+                    p0 = p1;
+                    p1 = p2;
+                    p2 = p;
+                    j++;
+                }
+                if (x0 == new Complex())
+                {
+                    MessageBox.Show("No se pudo obtener la aproximacion con el error deseado en la x^" + i.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                else
+                {
+                    Array.Resize(ref arrAux, arrB.Length);
+                    Array.Copy(arrB, arrAux, arrB.Length);
+                }
+                
+            } 
+            return true;
         }
         private double Func_G2(double x)
         {
@@ -643,6 +710,14 @@ namespace MetodosNumericos
         {
             Complex r;
             r = (Complex)(Complex.Pow(x,2) + Complex.Multiply(x,5.365230) + 7.324772);
+            return r;
+        }
+        Complex FuncComDeflacion(Complex x,Complex[] arrA)
+        {
+            Complex r = new Complex(0,0);
+            for (int i = 0; i < arrA.Length; i++) {
+                r = r + Complex.Multiply(arrA[i],Complex.Pow(x,arrA.Length-i-1));
+            }
             return r;
         }
         public static string ComplexToString(Complex complex)
