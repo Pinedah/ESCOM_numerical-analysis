@@ -53,14 +53,33 @@ namespace MetodosNumericos
             Complex[] arr = coeficientes.ToArray();
             int maxIter = int.Parse(numMaxIterMu.Text);
             double errMax = double.Parse(ErrMaxMu.Text);
-            double p0 = double.Parse(txt_p0.Text);
-            double p1 = double.Parse(txt_p1.Text);
-            double p2 = double.Parse(txt_p2.Text);
+            Complex p0 = ParseComplex(txt_p0.Text);
+            Complex p1 = ParseComplex(txt_p1.Text);
+            Complex p2 = ParseComplex(txt_p2.Text);
 
             MetodosSolEc metodosSolEc = new MetodosSolEc();
             metodosSolEc.numMaxIter = maxIter;
             metodosSolEc.errorMaximo = errMax;
             metodosSolEc.deflacion(p0, p1, p2, arr, ref this.dgv_result);
+        }
+
+        private Complex ParseComplex(string input)
+        {
+            input = input.Replace(" ", "");
+
+            string[] parts = input.Split(new char[] { '+', '-' }, StringSplitOptions.RemoveEmptyEntries);
+
+            bool isNegativeImaginary = input.Contains("-") && input.LastIndexOf('-') > 0;
+
+            double realPart = double.Parse(parts[0]);
+
+            double imaginaryPart = double.Parse(parts[1].Replace("i", ""));
+            if (isNegativeImaginary)
+            {
+                imaginaryPart = -imaginaryPart;
+            }
+
+            return new Complex(realPart, imaginaryPart);
         }
 
         private void btn_coeficientes_Click(object sender, EventArgs e)
