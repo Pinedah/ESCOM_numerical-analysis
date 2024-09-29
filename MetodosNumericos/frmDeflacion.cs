@@ -32,6 +32,7 @@ namespace MetodosNumericos
             txt_p1.Visible = false;
             txt_p2.Visible = false;
             btn_calcular.Visible = false;
+            dgv_result.Visible = false;
         }
 
         int grado = 0, contador = 0;
@@ -77,6 +78,7 @@ namespace MetodosNumericos
                 txt_p1.Visible = true;
                 txt_p2.Visible = true;
                 btn_calcular.Visible = true;
+                dgv_result.Visible = true;
             }
             else
             {
