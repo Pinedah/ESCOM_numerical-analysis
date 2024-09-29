@@ -593,6 +593,9 @@ namespace MetodosNumericos
 
         public bool deflacion(Complex p0, Complex p1, Complex p2, Complex[] arrA, ref DataGridView dgvResultado)
         {
+
+
+
             Complex[] arrSol = new Complex[arrA.Length-1];
             Complex[] arrAux = new Complex[arrA.Length];
             Array.Copy(arrA, arrAux, arrA.Length);
@@ -645,7 +648,7 @@ namespace MetodosNumericos
                         x0 = p;
                         Console.WriteLine("Solucion x0");
                         Console.WriteLine(p.ToString());
-                        
+
                         for (int k = i - 2; k >= 0; k--)
                         {
                             arrB[k] = arrAux[k+1] + Complex.Multiply(x0, arrB[k + 1]);
@@ -670,6 +673,25 @@ namespace MetodosNumericos
 
             Console.WriteLine("Arreglo soluciones");
             Console.WriteLine(string.Join(", ", arrSol));
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("raiz", "Raíz");
+            dgvResultado.Columns.Add("parteReal", "Parte Real");
+            dgvResultado.Columns.Add("parteImag", "Parte Imaginaria");
+            // formatear las medidas de las columnas
+            dgvResultado.Columns["raiz"].Width = 50;
+            dgvResultado.Columns["parteReal"].Width = 170;
+            dgvResultado.Columns["parteImag"].Width = 170;
+
+            for (int i = 0; i < arrSol.Length; i++)
+            {
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i].Cells[0].Value = i + 1;
+                dgvResultado.Rows[i].Cells[1].Value = arrSol[i].Real;
+                dgvResultado.Rows[i].Cells[2].Value = arrSol[i].Imaginary;
+            }
+
             return true;
         }
 
