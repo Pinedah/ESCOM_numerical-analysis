@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathNet.Symbolics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,6 +52,7 @@ namespace MetodosNumericos
         private void btn_calcular_Click(object sender, EventArgs e)
         {
             Complex[] arr = coeficientes.ToArray();
+            Console.Write(string.Join(", ", arr));
             int maxIter = int.Parse(numMaxIterMu.Text);
             double errMax = double.Parse(ErrMaxMu.Text);
             Complex p0 = ParseComplex(txt_p0.Text);
@@ -84,7 +86,8 @@ namespace MetodosNumericos
 
         private void btn_coeficientes_Click(object sender, EventArgs e)
         {
-            if(contador == grado)
+            coeficientes.Add(new Complex(double.Parse(txtCoef.Text), 0));
+            if (contador == grado)
             {
                 label2.Visible = true;
                 label3.Visible = true;
@@ -101,9 +104,9 @@ namespace MetodosNumericos
             }
             else
             {
-                lblX.Text = "X^" + (contador + 1);
+                int aux = contador;
+                lblX.Text = "X^" + (aux + 1);
                 Console.WriteLine(txtCoef.Text);
-                coeficientes.Add(new Complex(double.Parse(txtCoef.Text), 0));
                 txtCoef.Text = "";
                 contador++;
             }
