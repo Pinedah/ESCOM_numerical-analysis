@@ -39,6 +39,7 @@
             this.métodoDeSteffensenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.métodoDeBiseccionAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.métodoDeLaSecanteAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deflaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@
             this.métodoDeLaFalsaPosiciónToolStripMenuItem,
             this.métodoDeSteffensenToolStripMenuItem,
             this.métodoDeBiseccionAitkenToolStripMenuItem,
-            this.métodoDeLaSecanteAitkenToolStripMenuItem});
+            this.métodoDeLaSecanteAitkenToolStripMenuItem,
+            this.deflaciónToolStripMenuItem});
             this.raicesDeEcuacionesToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.raicesDeEcuacionesToolStripMenuItem.Name = "raicesDeEcuacionesToolStripMenuItem";
             this.raicesDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(221, 28);
@@ -135,6 +137,13 @@
             this.métodoDeLaSecanteAitkenToolStripMenuItem.Text = "Método de la Secante-Aitken";
             this.métodoDeLaSecanteAitkenToolStripMenuItem.Click += new System.EventHandler(this.métodoDeLaSecanteAitkenToolStripMenuItem_Click);
             // 
+            // deflaciónToolStripMenuItem
+            // 
+            this.deflaciónToolStripMenuItem.Name = "deflaciónToolStripMenuItem";
+            this.deflaciónToolStripMenuItem.Size = new System.Drawing.Size(349, 28);
+            this.deflaciónToolStripMenuItem.Text = "Deflación";
+            this.deflaciónToolStripMenuItem.Click += new System.EventHandler(this.deflaciónToolStripMenuItem_Click);
+            // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +174,7 @@
         private System.Windows.Forms.ToolStripMenuItem métodoDeSteffensenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem métodoDeBiseccionAitkenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem métodoDeLaSecanteAitkenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deflaciónToolStripMenuItem;
     }
 }
 

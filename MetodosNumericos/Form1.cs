@@ -85,5 +85,12 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void deflaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDeflacion f = new frmDeflacion();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }

@@ -592,7 +592,7 @@ namespace MetodosNumericos
 
         public bool deflacion(Complex p0, Complex p1, Complex p2, Complex[] arrA, ref DataGridView dgvResultado)
         {
-            Complex[] arrSol = new Complex[arrA.Length-1];
+            Complex[] arrSol = new Complex[arrA.Length - 1];
             Complex[] arrAux = new Complex[arrA.Length - 1];
             Array.Copy(arrA, arrAux, arrA.Length);
             Complex x0 = new Complex();
