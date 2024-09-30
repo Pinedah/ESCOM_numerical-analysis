@@ -614,10 +614,9 @@ namespace MetodosNumericos
             for (int i = arrAux.Length - 1; i > 0; i--)//Le quitaste el igual a cero por que ya se llego a la ultima
             {
                 Complex[] arrB = new Complex[i];              
-                if (i > 0)
-                {
-                    arrB[i - 1] = arrAux[i];
-                }
+                
+                arrB[i - 1] = arrAux[i];
+                
 
                 int j = 1;
                 while (j <= numMaxIter)
@@ -646,15 +645,11 @@ namespace MetodosNumericos
                     if (ErrorAct <= errorMaximo)
                     {
                         x0 = p;
-                        Console.WriteLine("Solucion x0");
-                        Console.WriteLine(p.ToString());
 
                         for (int k = i - 2; k >= 0; k--)
                         {
                             arrB[k] = arrAux[k+1] + Complex.Multiply(x0, arrB[k + 1]);
                         }
-                        Console.WriteLine("Arreglo b's");
-                        Console.WriteLine(string.Join(", ", arrB));
                         arrSol[arrA.Length - 1 - i] = p;
                         break;
                     }
@@ -671,8 +666,7 @@ namespace MetodosNumericos
                 arrAux = arrB;
             }
 
-            Console.WriteLine("Arreglo soluciones");
-            Console.WriteLine(string.Join(", ", arrSol));
+            
 
             dgvResultado.Rows.Clear();
             dgvResultado.Columns.Clear();

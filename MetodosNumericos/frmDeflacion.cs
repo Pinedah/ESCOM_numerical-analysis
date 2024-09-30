@@ -52,7 +52,6 @@ namespace MetodosNumericos
         private void btn_calcular_Click(object sender, EventArgs e)
         {
             Complex[] arr = coeficientes.ToArray();
-            Console.Write(string.Join(", ", arr));
             int maxIter = int.Parse(numMaxIterMu.Text);
             double errMax = double.Parse(ErrMaxMu.Text);
             Complex p0 = ParseComplex(txt_p0.Text);
@@ -106,7 +105,6 @@ namespace MetodosNumericos
             {
                 int aux = contador;
                 lblX.Text = "X^" + (aux + 1);
-                Console.WriteLine(txtCoef.Text);
                 txtCoef.Text = "";
                 contador++;
             }
