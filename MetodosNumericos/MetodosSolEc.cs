@@ -361,7 +361,7 @@ namespace MetodosNumericos
                 dgvResultado.Rows.Add();
                 dgvResultado.Rows[i - 1].Cells[0].Value = i;
                 dgvResultado.Rows[i - 1].Cells[1].Value = po;
-                dgvResultado.Rows[i - 1].Cells[2].Value = Func(po);
+                dgvResultado.Rows[i - 1].Cells[2].Value = FuncPF(po);
                 dgvResultado.Rows[i - 1].Cells[3].Value = errorActual;
 
 
@@ -718,14 +718,15 @@ namespace MetodosNumericos
         double Func(double x)
         {
             double r;
-            r = (double)(Math.Pow(x, 2) - 3.0);
+            //r = (double)(Math.Pow(x, 2) - 3.0);
+            r = (double)(1.7 + (((32.17 / (2 * x * x))) * (((Math.Pow((Math.E), x) - Math.Pow((Math.E), -x)) / 2) - Math.Sin(x))));
             return r;
         }
 
         double FuncPF(double x)
         {
             double r;
-            r = (double)(x - (Math.Pow(x, 3) + 4 * x * x - 10) / (3 * x * x + 8 * x));
+            r = (double)(Math.Sqrt(25/x));
             return r;
         }
         
