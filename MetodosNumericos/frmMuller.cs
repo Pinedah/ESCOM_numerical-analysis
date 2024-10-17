@@ -36,14 +36,14 @@ namespace MetodosNumericos
         private void btn_calcular_Click(object sender, EventArgs e)
         {
             Complex P0, P1,P2;
-            double errorMax;
+            float errorMax;
             int numMaxIte;
             bool res;
 
             P0 = ParseComplex(txt_p0.Text);
             P1 = ParseComplex(txt_p1.Text);
             P2 = ParseComplex(txt_p2.Text);
-            errorMax = double.Parse(ErrMaxMu.Text);
+            errorMax = float.Parse(ErrMaxMu.Text);
             numMaxIte = int.Parse(numMaxIterMu.Text);
 
             MetodosSolEc metodos = new MetodosSolEc();
@@ -59,9 +59,9 @@ namespace MetodosNumericos
 
             bool isNegativeImaginary = input.Contains("-") && input.LastIndexOf('-') > 0;
 
-            double realPart = double.Parse(parts[0]);
+            float realPart = float.Parse(parts[0]);
 
-            double imaginaryPart = double.Parse(parts[1].Replace("i", ""));
+            float imaginaryPart = float.Parse(parts[1].Replace("i", ""));
             if (isNegativeImaginary)
             {
                 imaginaryPart = -imaginaryPart;

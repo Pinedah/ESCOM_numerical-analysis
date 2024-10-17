@@ -53,7 +53,7 @@ namespace MetodosNumericos
         {
             Complex[] arr = coeficientes.ToArray();
             int maxIter = int.Parse(numMaxIterMu.Text);
-            double errMax = double.Parse(ErrMaxMu.Text);
+            float errMax = float.Parse(ErrMaxMu.Text);
             Complex p0 = ParseComplex(txt_p0.Text);
             Complex p1 = ParseComplex(txt_p1.Text);
             Complex p2 = ParseComplex(txt_p2.Text);
@@ -72,9 +72,9 @@ namespace MetodosNumericos
 
             bool isNegativeImaginary = input.Contains("-") && input.LastIndexOf('-') > 0;
 
-            double realPart = double.Parse(parts[0]);
+            float realPart = float.Parse(parts[0]);
 
-            double imaginaryPart = double.Parse(parts[1].Replace("i", ""));
+            float imaginaryPart = float.Parse(parts[1].Replace("i", ""));
             if (isNegativeImaginary)
             {
                 imaginaryPart = -imaginaryPart;
@@ -85,7 +85,7 @@ namespace MetodosNumericos
 
         private void btn_coeficientes_Click(object sender, EventArgs e)
         {
-            coeficientes.Add(new Complex(double.Parse(txtCoef.Text), 0));
+            coeficientes.Add(new Complex(float.Parse(txtCoef.Text), 0));
             if (contador == grado)
             {
                 label2.Visible = true;

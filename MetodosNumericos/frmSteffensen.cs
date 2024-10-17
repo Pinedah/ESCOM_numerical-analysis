@@ -29,11 +29,11 @@ namespace MetodosNumericos
 
         private void btn_calcular_Click(object sender, EventArgs e)
         {
-            double po, errorMax;
+            float po, errorMax;
             int numMaxIte;
 
-            po = double.Parse(txt_po.Text);
-            errorMax = double.Parse(ErrMax.Text);
+            po = float.Parse(txt_po.Text);
+            errorMax = float.Parse(ErrMax.Text);
             numMaxIte = int.Parse(numMaxIter.Text);
 
 
