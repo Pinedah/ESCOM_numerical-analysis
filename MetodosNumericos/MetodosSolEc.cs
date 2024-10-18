@@ -757,9 +757,9 @@ namespace MetodosNumericos
 
         public void PlotFunction(double a, double b, Func<double, double> func)
         {
-            Graphics g = PictureBox.CreateGraphics();
-            float xm = PictureBox.Width / 2;
-            float ym = PictureBox.Height / 2;
+            Graphics g = pictureBox1.CreateGraphics();
+            float xm = pictureBox1.Width / 2;
+            float ym = pictureBox1.Height / 2;
             g.TranslateTransform(xm, ym);
             g.DrawLine(Pens.Black, -xm, 0, xm, 0); // eje x
             g.DrawLine(Pens.Black, 0, -ym, 0, ym); // eje y
