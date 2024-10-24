@@ -320,8 +320,8 @@ namespace MetodosNumericos
                 dgvResultado.Rows.Add();
                 dgvResultado.Rows[i - 1].Cells[0].Value = i;
                 dgvResultado.Rows[i - 1].Cells[1].Value = po;
-                dgvResultado.Rows[i - 1].Cells[2].Value = Func(pi);
-                dgvResultado.Rows[i - 1].Cells[3].Value = FuncPrima(pi);
+                dgvResultado.Rows[i - 1].Cells[2].Value = Func(po);
+                dgvResultado.Rows[i - 1].Cells[3].Value = FuncPrima(po);
                 dgvResultado.Rows[i - 1].Cells[4].Value = pi;
                 dgvResultado.Rows[i - 1].Cells[5].Value = errorActual;
                 // dgvResultado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -594,7 +594,10 @@ namespace MetodosNumericos
         public bool deflacion(Complex p0, Complex p1, Complex p2, Complex[] arrA, ref DataGridView dgvResultado)
         {
 
-
+            if (arrA.Length == 1) { 
+                MessageBox.Show("No se pudo obtener la aproximacion a las raices", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
             Complex[] arrSol = new Complex[arrA.Length-1];
             Complex[] arrAux = new Complex[arrA.Length];
@@ -712,14 +715,14 @@ namespace MetodosNumericos
         float FuncPrima(float x)
         {
             float r;
-            r = (float)(2 * x);
+            r = (float)(5 * Math.Pow(x, 4) - 9 * Math.Pow(x, 2) + 10 * x);
             return r;
         }
         float Func(float x)
         {
             float r;
             //r = (float)(Math.Pow(x, 2) - 3.0);
-            r = (float)(1.7 + (((32.17 / (2 * x * x))) * (((Math.Pow((Math.E), x) - Math.Pow((Math.E), -x)) / 2) - Math.Sin(x))));
+            r = (float)(Math.Pow(x, 5) - 3 * Math.Pow(x,3) + 5*Math.Pow(x,2) - 10);
             return r;
         }
 
