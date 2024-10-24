@@ -758,28 +758,7 @@ namespace MetodosNumericos
             return $"{complex.Real} {imaginaryPart}";
         }
 
-        public void PlotFunction(double a, double b, Func<double, double> func)
-        {
-            Graphics g = pictureBox1.CreateGraphics();
-            float xm = pictureBox1.Width / 2;
-            float ym = pictureBox1.Height / 2;
-            g.TranslateTransform(xm, ym);
-            g.DrawLine(Pens.Black, -xm, 0, xm, 0); // eje x
-            g.DrawLine(Pens.Black, 0, -ym, 0, ym); // eje y
-
-            float delta = 0.1f;
-            float x1 = (float)a;
-            float x2, y1, y2;
-
-            while (x1 <= b)
-            {
-                y1 = (float)func(x1);
-                x2 = x1 + delta;
-                y2 = (float)func(x2);
-                g.DrawLine(Pens.Blue, x1 * 10, -y1 * 10, x2 * 10, -y2 * 10);
-                x1 = x2;
-            }
-        }
+        
 
     }
 }
