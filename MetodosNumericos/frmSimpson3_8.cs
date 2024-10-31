@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace MetodosNumericos
 {
-    public partial class frmSimpson1_3 : Form
+    public partial class frmSimpson3_8 : Form
     {
-        public frmSimpson1_3()
+        public frmSimpson3_8()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_res_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btn_calcular_Click(object sender, EventArgs e)
@@ -28,24 +43,9 @@ namespace MetodosNumericos
             i.b = b;
             i.n = k;
 
-            float res = i.metodoSimpson1_3(a, b, k);
+            float res = i.metodoSimpson3_8(a, b, k);
 
             tf_res.Text = res.ToString();
-        }
-
-        private void tf_res_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void tf_b_TextChanged(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace MetodosNumericos
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

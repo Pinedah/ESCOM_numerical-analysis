@@ -178,6 +178,7 @@
             this.simpson38ToolStripMenuItem.Name = "simpson38ToolStripMenuItem";
             this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.simpson38ToolStripMenuItem.Text = "Simpson 3/8";
+            this.simpson38ToolStripMenuItem.Click += new System.EventHandler(this.simpson38ToolStripMenuItem_Click);
             // 
             // frm
             // 

@@ -1,6 +1,6 @@
 ﻿namespace MetodosNumericos
 {
-    partial class frmSimpson1_3
+    partial class frmSimpson3_8
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@
             this.label3.Location = new System.Drawing.Point(239, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 22);
-            this.label3.TabIndex = 34;
+            this.label3.TabIndex = 44;
             this.label3.Text = "Resultado:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -57,7 +57,7 @@
             this.tf_res.Location = new System.Drawing.Point(335, 113);
             this.tf_res.Name = "tf_res";
             this.tf_res.Size = new System.Drawing.Size(123, 29);
-            this.tf_res.TabIndex = 33;
+            this.tf_res.TabIndex = 43;
             this.tf_res.TextChanged += new System.EventHandler(this.tf_res_TextChanged);
             // 
             // label2
@@ -67,7 +67,7 @@
             this.label2.Location = new System.Drawing.Point(27, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 22);
-            this.label2.TabIndex = 32;
+            this.label2.TabIndex = 42;
             this.label2.Text = "k:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -78,7 +78,7 @@
             this.btn_calcular.Location = new System.Drawing.Point(335, 15);
             this.btn_calcular.Name = "btn_calcular";
             this.btn_calcular.Size = new System.Drawing.Size(123, 39);
-            this.btn_calcular.TabIndex = 31;
+            this.btn_calcular.TabIndex = 41;
             this.btn_calcular.Text = "CALCULAR";
             this.btn_calcular.UseVisualStyleBackColor = true;
             this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click);
@@ -89,7 +89,7 @@
             this.tf_b.Location = new System.Drawing.Point(55, 79);
             this.tf_b.Name = "tf_b";
             this.tf_b.Size = new System.Drawing.Size(100, 29);
-            this.tf_b.TabIndex = 30;
+            this.tf_b.TabIndex = 40;
             this.tf_b.TextChanged += new System.EventHandler(this.tf_b_TextChanged);
             // 
             // label5
@@ -99,7 +99,7 @@
             this.label5.Location = new System.Drawing.Point(28, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 22);
-            this.label5.TabIndex = 29;
+            this.label5.TabIndex = 39;
             this.label5.Text = "b:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
@@ -109,7 +109,7 @@
             this.tf_a.Location = new System.Drawing.Point(55, 40);
             this.tf_a.Name = "tf_a";
             this.tf_a.Size = new System.Drawing.Size(100, 29);
-            this.tf_a.TabIndex = 28;
+            this.tf_a.TabIndex = 38;
             this.tf_a.TextChanged += new System.EventHandler(this.tf_a_TextChanged);
             // 
             // label4
@@ -119,7 +119,7 @@
             this.label4.Location = new System.Drawing.Point(28, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 22);
-            this.label4.TabIndex = 27;
+            this.label4.TabIndex = 37;
             this.label4.Text = "a:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -129,7 +129,7 @@
             this.tf_k.Location = new System.Drawing.Point(55, 117);
             this.tf_k.Name = "tf_k";
             this.tf_k.Size = new System.Drawing.Size(100, 29);
-            this.tf_k.TabIndex = 26;
+            this.tf_k.TabIndex = 36;
             this.tf_k.TextChanged += new System.EventHandler(this.tf_k_TextChanged);
             // 
             // label1
@@ -139,12 +139,12 @@
             this.label1.Location = new System.Drawing.Point(29, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 22);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "MÉTODO DE SIMPSON 1/3";
+            this.label1.Size = new System.Drawing.Size(261, 22);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "MÉTODO DE SIMPSON 3/8";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // frmSimpson1_3
+            // frmSimpson3_8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,8 +159,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tf_k);
             this.Controls.Add(this.label1);
-            this.Name = "frmSimpson1_3";
-            this.Text = "frmSimpson1_3";
+            this.Name = "frmSimpson3_8";
+            this.Text = "frmSimpson3_8";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -132,6 +132,12 @@
     <Compile Include="frmSimpson1_3.Designer.cs">
       <DependentUpon>frmSimpson1_3.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSimpson3_8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSimpson3_8.Designer.cs">
+      <DependentUpon>frmSimpson3_8.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSteffensen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSimpson1_3.resx">
       <DependentUpon>frmSimpson1_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSimpson3_8.resx">
+      <DependentUpon>frmSimpson3_8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSteffensen.resx">
       <DependentUpon>frmSteffensen.cs</DependentUpon>

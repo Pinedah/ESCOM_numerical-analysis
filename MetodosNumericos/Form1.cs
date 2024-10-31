@@ -111,5 +111,12 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void simpson38ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSimpson3_8 f = new frmSimpson3_8();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }
