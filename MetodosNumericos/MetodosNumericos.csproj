@@ -126,12 +126,25 @@
     <Compile Include="frmSecanteAitken.Designer.cs">
       <DependentUpon>frmSecanteAitken.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSimpson1_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSimpson1_3.Designer.cs">
+      <DependentUpon>frmSimpson1_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSteffensen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSteffensen.Designer.cs">
       <DependentUpon>frmSteffensen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTrapecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrapecio.Designer.cs">
+      <DependentUpon>frmTrapecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Integracion.cs" />
     <Compile Include="MetodosSolEc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,8 +178,14 @@
     <EmbeddedResource Include="frmSecanteAitken.resx">
       <DependentUpon>frmSecanteAitken.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSimpson1_3.resx">
+      <DependentUpon>frmSimpson1_3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSteffensen.resx">
       <DependentUpon>frmSteffensen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrapecio.resx">
+      <DependentUpon>frmTrapecio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

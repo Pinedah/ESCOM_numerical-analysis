@@ -595,10 +595,7 @@ namespace MetodosNumericos
         public bool deflacion(Complex p0, Complex p1, Complex p2, Complex[] arrA, ref DataGridView dgvResultado)
         {
 
-            if (arrA.Length == 1) { 
-                MessageBox.Show("No se pudo obtener la aproximacion a las raices", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            
 
             Complex[] arrSol = new Complex[arrA.Length-1];
             Complex[] arrAux = new Complex[arrA.Length];
@@ -697,7 +694,8 @@ namespace MetodosNumericos
         private float Func_G2(float x)
         {
             float r;
-            r = (float)(Math.Pow(x, 3) + 4*Math.Pow(x, 2) - 10);
+            //r = (float)(Math.Pow(x, 3) + 4*Math.Pow(x, 2) - 10);
+            r = (float)((1000/x*x)*(1-Math.Pow((1+x), -30)) - ((1000*30)/x)*Math.Pow((1+x), -31));
             return r;
         }
 

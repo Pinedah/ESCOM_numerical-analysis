@@ -40,6 +40,10 @@
             this.métodoDeBiseccionAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.métodoDeLaSecanteAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deflaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.integraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trapecioCompuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpson13ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpson38ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +51,8 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.raicesDeEcuacionesToolStripMenuItem});
+            this.raicesDeEcuacionesToolStripMenuItem,
+            this.integraciónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(384, 32);
@@ -144,6 +149,36 @@
             this.deflaciónToolStripMenuItem.Text = "Deflación";
             this.deflaciónToolStripMenuItem.Click += new System.EventHandler(this.deflaciónToolStripMenuItem_Click);
             // 
+            // integraciónToolStripMenuItem
+            // 
+            this.integraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trapecioCompuestoToolStripMenuItem,
+            this.simpson13ToolStripMenuItem,
+            this.simpson38ToolStripMenuItem});
+            this.integraciónToolStripMenuItem.Name = "integraciónToolStripMenuItem";
+            this.integraciónToolStripMenuItem.Size = new System.Drawing.Size(79, 28);
+            this.integraciónToolStripMenuItem.Text = "Integración";
+            // 
+            // trapecioCompuestoToolStripMenuItem
+            // 
+            this.trapecioCompuestoToolStripMenuItem.Name = "trapecioCompuestoToolStripMenuItem";
+            this.trapecioCompuestoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.trapecioCompuestoToolStripMenuItem.Text = "Trapecio Compuesto";
+            this.trapecioCompuestoToolStripMenuItem.Click += new System.EventHandler(this.trapecioCompuestoToolStripMenuItem_Click);
+            // 
+            // simpson13ToolStripMenuItem
+            // 
+            this.simpson13ToolStripMenuItem.Name = "simpson13ToolStripMenuItem";
+            this.simpson13ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.simpson13ToolStripMenuItem.Text = "Simpson 1/3";
+            this.simpson13ToolStripMenuItem.Click += new System.EventHandler(this.simpson13ToolStripMenuItem_Click);
+            // 
+            // simpson38ToolStripMenuItem
+            // 
+            this.simpson38ToolStripMenuItem.Name = "simpson38ToolStripMenuItem";
+            this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.simpson38ToolStripMenuItem.Text = "Simpson 3/8";
+            // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +210,10 @@
         private System.Windows.Forms.ToolStripMenuItem métodoDeBiseccionAitkenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem métodoDeLaSecanteAitkenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deflaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem integraciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem trapecioCompuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simpson13ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simpson38ToolStripMenuItem;
     }
 }
 

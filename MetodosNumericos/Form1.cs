@@ -92,5 +92,24 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void trapecioCompuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // metodo trapecio
+
+            frmTrapecio f = new frmTrapecio();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+
+        }
+
+        private void simpson13ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // metodo simpson 1/3
+
+            frmSimpson1_3 f = new frmSimpson1_3();
+            f.Show();
+            f.WindowState = FormWindowState.Normal;
+        }
     }
 }
