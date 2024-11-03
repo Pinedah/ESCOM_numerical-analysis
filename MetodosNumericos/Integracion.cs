@@ -15,7 +15,7 @@ namespace MetodosNumericos
 
         public float metodoTrapecio(float x0, float xn, int numSubInt)
         {
-            // validar que el usuario no haga mamadas con N
+            
 
             float h;
             float sumatoria = 0;
