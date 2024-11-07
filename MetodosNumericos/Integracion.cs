@@ -1,4 +1,5 @@
 ﻿using MathNet.Numerics;
+using MathNet.Numerics.LinearAlgebra.Complex.Solvers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,6 +99,65 @@ namespace MetodosNumericos
             sum3 *= 2;
             integral = (3 * h / 8) * (f(a) + sum1 + sum2 + sum3 + f(b));
             return integral;
+        }
+
+        public float TrapecioDoble(float a, float b, float c, float d, int n, int m)
+        {
+            float hx, hy, x0, xn, y0, ym, result = 0, sum1, sum2;
+            int i, j;
+            hx = (b - a) / n; 
+            hy = (d - c)/m;
+
+            x0 = a;
+            xn = b;
+            y0 = c;
+            ym = d;
+
+            sum1 = 0;
+            for(j=1; j<m; j++)
+            {
+                sum1 += f2(x0, y0 + hy * j);
+            }
+            sum1 += (f2(x0, y0) + f2(x0, d)) / 2;
+            sum1 /= 2;
+            result = sum1;
+
+            sum1 = 0;
+            for (i = 1; i < n; i++)
+                sum1 += f2(x0 + hx * i, y0);
+
+            for (i = 1; i < n; i++)
+                sum1 += f2(x0 + hx * i, ym);
+
+            sum1 /= 2;
+
+            sum2 = 0;
+            for (i = 1; i < n; i++)
+                for (j = 1; j < m; j++)
+                    sum2 += f2(x0 + hx * i, y0 + hy * j);
+
+            result += sum1 + sum2;
+
+            sum1 = sum2 = 0;
+            for (j = 1; j < m; j++)
+                sum1 += f2(xn, y0 + hy * j);
+
+            sum1 += f2(xn, y0) / 2 + f2(xn, ym) / 2;
+            sum1 /= 2;
+
+            result += sum1;
+            result *= hx;
+            result *= hy;
+
+
+            return result;
+        }
+
+        float f2(float x, float y)
+        {
+            float r;
+            r = (float)(Math.Sqrt(x*x + y*y) * Math.Sin(Math.Sqrt(x*x + y*y)));
+            return r;
         }
 
         float f(float x)

@@ -118,5 +118,34 @@ namespace MetodosNumericos
             f.Show();
             f.WindowState = FormWindowState.Normal;
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void trapecioDoblesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trapecioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTrapecioDoble frmTrapecioDoble = new frmTrapecioDoble();
+            frmTrapecioDoble.Show();
+            frmTrapecioDoble.WindowState = FormWindowState.Normal;
+        }
+
+        private void integraciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpson13ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSimpson1_3Doble frmSimpson1_3Doble = new frmSimpson1_3Doble();
+            frmSimpson1_3Doble.Show();
+            frmSimpson1_3Doble.WindowState = FormWindowState.Normal;
+        }
     }
 }

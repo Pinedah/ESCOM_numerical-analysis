@@ -59,6 +59,7 @@
             this.tf_b.Name = "tf_b";
             this.tf_b.Size = new System.Drawing.Size(100, 29);
             this.tf_b.TabIndex = 19;
+            this.tf_b.TextChanged += new System.EventHandler(this.tf_b_TextChanged);
             // 
             // label5
             // 
@@ -69,6 +70,7 @@
             this.label5.Size = new System.Drawing.Size(25, 22);
             this.label5.TabIndex = 18;
             this.label5.Text = "b:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tf_a
             // 
@@ -77,6 +79,7 @@
             this.tf_a.Name = "tf_a";
             this.tf_a.Size = new System.Drawing.Size(100, 29);
             this.tf_a.TabIndex = 17;
+            this.tf_a.TextChanged += new System.EventHandler(this.tf_a_TextChanged);
             // 
             // label4
             // 
@@ -87,6 +90,7 @@
             this.label4.Size = new System.Drawing.Size(24, 22);
             this.label4.TabIndex = 16;
             this.label4.Text = "a:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tf_n
             // 
@@ -95,6 +99,7 @@
             this.tf_n.Name = "tf_n";
             this.tf_n.Size = new System.Drawing.Size(100, 29);
             this.tf_n.TabIndex = 13;
+            this.tf_n.TextChanged += new System.EventHandler(this.tf_n_TextChanged);
             // 
             // label1
             // 
@@ -106,6 +111,7 @@
             this.label1.Size = new System.Drawing.Size(250, 22);
             this.label1.TabIndex = 11;
             this.label1.Text = "MÉTODO DE TRAPECIOS";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -116,6 +122,7 @@
             this.label2.Size = new System.Drawing.Size(25, 22);
             this.label2.TabIndex = 22;
             this.label2.Text = "n:";
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label3
             // 
@@ -126,6 +133,7 @@
             this.label3.Size = new System.Drawing.Size(95, 22);
             this.label3.TabIndex = 24;
             this.label3.Text = "Resultado:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tf_res
             // 
@@ -134,6 +142,7 @@
             this.tf_res.Name = "tf_res";
             this.tf_res.Size = new System.Drawing.Size(123, 29);
             this.tf_res.TabIndex = 23;
+            this.tf_res.TextChanged += new System.EventHandler(this.tf_res_TextChanged);
             // 
             // frmTrapecio
             // 

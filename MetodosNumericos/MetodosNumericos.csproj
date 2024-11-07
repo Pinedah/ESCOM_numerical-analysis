@@ -132,6 +132,12 @@
     <Compile Include="frmSimpson1_3.Designer.cs">
       <DependentUpon>frmSimpson1_3.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSimpson1_3Doble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSimpson1_3Doble.Designer.cs">
+      <DependentUpon>frmSimpson1_3Doble.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSimpson3_8.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,12 @@
     </Compile>
     <Compile Include="frmTrapecio.Designer.cs">
       <DependentUpon>frmTrapecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrapecioDoble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrapecioDoble.Designer.cs">
+      <DependentUpon>frmTrapecioDoble.cs</DependentUpon>
     </Compile>
     <Compile Include="Integracion.cs" />
     <Compile Include="MetodosSolEc.cs" />
@@ -187,6 +199,9 @@
     <EmbeddedResource Include="frmSimpson1_3.resx">
       <DependentUpon>frmSimpson1_3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSimpson1_3Doble.resx">
+      <DependentUpon>frmSimpson1_3Doble.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSimpson3_8.resx">
       <DependentUpon>frmSimpson3_8.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrapecio.resx">
       <DependentUpon>frmTrapecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrapecioDoble.resx">
+      <DependentUpon>frmTrapecioDoble.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -44,6 +44,9 @@
             this.trapecioCompuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpson13ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpson38ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multiplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trapecioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpson13ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +61,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(384, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // raicesDeEcuacionesToolStripMenuItem
             // 
@@ -154,10 +158,12 @@
             this.integraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.trapecioCompuestoToolStripMenuItem,
             this.simpson13ToolStripMenuItem,
-            this.simpson38ToolStripMenuItem});
+            this.simpson38ToolStripMenuItem,
+            this.multiplesToolStripMenuItem});
             this.integraciónToolStripMenuItem.Name = "integraciónToolStripMenuItem";
             this.integraciónToolStripMenuItem.Size = new System.Drawing.Size(79, 28);
             this.integraciónToolStripMenuItem.Text = "Integración";
+            this.integraciónToolStripMenuItem.Click += new System.EventHandler(this.integraciónToolStripMenuItem_Click);
             // 
             // trapecioCompuestoToolStripMenuItem
             // 
@@ -179,6 +185,29 @@
             this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.simpson38ToolStripMenuItem.Text = "Simpson 3/8";
             this.simpson38ToolStripMenuItem.Click += new System.EventHandler(this.simpson38ToolStripMenuItem_Click);
+            // 
+            // multiplesToolStripMenuItem
+            // 
+            this.multiplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trapecioToolStripMenuItem,
+            this.simpson13ToolStripMenuItem1});
+            this.multiplesToolStripMenuItem.Name = "multiplesToolStripMenuItem";
+            this.multiplesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.multiplesToolStripMenuItem.Text = "Multiples";
+            // 
+            // trapecioToolStripMenuItem
+            // 
+            this.trapecioToolStripMenuItem.Name = "trapecioToolStripMenuItem";
+            this.trapecioToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.trapecioToolStripMenuItem.Text = "Trapecio";
+            this.trapecioToolStripMenuItem.Click += new System.EventHandler(this.trapecioToolStripMenuItem_Click);
+            // 
+            // simpson13ToolStripMenuItem1
+            // 
+            this.simpson13ToolStripMenuItem1.Name = "simpson13ToolStripMenuItem1";
+            this.simpson13ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.simpson13ToolStripMenuItem1.Text = "Simpson 1/3";
+            this.simpson13ToolStripMenuItem1.Click += new System.EventHandler(this.simpson13ToolStripMenuItem1_Click);
             // 
             // frm
             // 
@@ -215,6 +244,9 @@
         private System.Windows.Forms.ToolStripMenuItem trapecioCompuestoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem simpson13ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem simpson38ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multiplesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem trapecioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simpson13ToolStripMenuItem1;
     }
 }
 
