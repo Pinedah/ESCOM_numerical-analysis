@@ -49,6 +49,36 @@
             label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(21, 118);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(35, 22);
+            label2.TabIndex = 48;
+            label2.Text = "kx:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.Location = new System.Drawing.Point(22, 82);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(25, 22);
+            label5.TabIndex = 46;
+            label5.Text = "b:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(22, 41);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(24, 22);
+            label4.TabIndex = 45;
+            label4.Text = "a:";
+            // 
             // tf_b
             // 
             this.tf_b.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,16 +176,6 @@
             this.tf_res.Size = new System.Drawing.Size(123, 29);
             this.tf_res.TabIndex = 49;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(21, 118);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(35, 22);
-            label2.TabIndex = 48;
-            label2.Text = "kx:";
-            // 
             // btn_calcular
             // 
             this.btn_calcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -166,26 +186,7 @@
             this.btn_calcular.TabIndex = 47;
             this.btn_calcular.Text = "CALCULAR";
             this.btn_calcular.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(22, 82);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(25, 22);
-            label5.TabIndex = 46;
-            label5.Text = "b:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(22, 41);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(24, 22);
-            label4.TabIndex = 45;
-            label4.Text = "a:";
+            this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click);
             // 
             // label1
             // 

@@ -152,6 +152,79 @@ namespace MetodosNumericos
 
             return result;
         }
+        public float metodoSimpson1_3Doble(float x0, float xn, float y0, float yn, int kx, int ky)
+        {
+            float n = 2 * kx;
+            float m = 2 * ky;
+            float hx = (xn - x0) / n;
+            float hy = (yn - y0) / m;
+            float resultado = 0.0f;
+            float sum1, sum2,sum3;
+            sum1 = sum2 = sum3 = 0;
+            resultado += f2(x0, y0);
+            for (int j = 1; j <= ky; j++)
+            {
+                sum1 += f2(x0, y0 + (2 * j - 1) * hy);
+            }
+            sum1 *= 4;
+            resultado += sum1;
+            sum1 = 0;
+
+            for (int j = 1; j < ky; j++)
+            {
+                sum1 += f2(x0, y0 + 2 * j * hy);
+            }
+            sum1 *= 2;
+            resultado += sum1;
+            resultado += f2(x0, yn);
+            sum1 = 0;
+            for (int i = 1; i <= kx; i++)
+            {
+                sum1 += f2(x0 + (2 * i - 1) * hx, y0);
+                sum1 += f2(x0 + (2 * i - 1) * hx, yn);
+                for (int j = 1; j <= ky; j++)
+                    sum2 += f2(x0 + (2 * i - 1) * hx, y0 + (2 * j - 1) * hy);
+                for (int j = 1; j < ky; j++)
+                    sum3 += f2(x0 + (2 * i - 1) * hx, y0 + 2 * j * hy);
+                resultado += (4 * (sum1 + 4 * sum2 + 2 * sum3));
+                sum1 = sum2 = sum3 = 0;
+            }
+            
+         
+            for(int i = 1; i<kx; i++)
+            {
+                sum1 += f2(x0+2*i*hx,y0);
+                sum1 += f2(x0 + 2 * i * hx, yn);
+                for (int j = 1; j <= ky; j++)
+                    sum2 += f2(x0 + 2 * i * hx,y0 + (2 * j - 1) * hy);
+                for (int j = 1; j < ky; j++)
+                    sum3 += f2(x0 + 2 * i * hx, y0 + 2 * j * hy);
+                resultado += (2 * (sum1 + 4 * sum2 + 2 * sum3));
+                sum1 = sum2 = sum3 = 0;
+            }
+
+            resultado += f2(xn, y0);
+            for (int j = 1; j <= ky; j++)
+            {
+                sum1 += f2(xn, y0 + (2 * j - 1) * hy);
+            }
+            sum1 *= 4;
+            resultado += sum1;
+            sum1 = 0;
+
+            for (int j = 1; j < ky; j++)
+            {
+                sum1 += f2(xn, y0 + 2 * j * hy);
+            }
+            sum1 *= 2;
+            resultado += sum1;
+            sum1 = 0;
+
+            resultado += f2(xn, yn);
+            resultado *= (hx * hy / 9.0f);
+            return resultado;
+
+        }
 
         float f2(float x, float y)
         {
@@ -166,5 +239,6 @@ namespace MetodosNumericos
             r = (float) (x * Math.Sin(x));
             return r;
         }
+
     }
 }
