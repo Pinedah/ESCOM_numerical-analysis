@@ -226,6 +226,16 @@ namespace MetodosNumericos
 
         }
 
+        public float newton_cottes(float a, float b)
+        {
+            float resultado = 0;
+            float h = (b - a) / 4;
+
+            resultado = (4.0f/3.0f)*(h)*(2*f_newtonCottes(a + h) - f_newtonCottes(a + 2*h) + 2*f_newtonCottes(a + 3*h));
+
+            return resultado;
+        }
+
         float f2(float x, float y)
         {
             float r;
@@ -237,6 +247,13 @@ namespace MetodosNumericos
         {
             float r;
             r = (float) (x * Math.Sin(x));
+            return r;
+        }
+        float f_newtonCottes(float x)
+        {
+            float r;
+            r = (float)(x*x - 3*x - 1);
+            // r = (float)(x * Math.Sin(x));
             return r;
         }
 

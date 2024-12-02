@@ -96,6 +96,12 @@
     <Compile Include="frmMuller.Designer.cs">
       <DependentUpon>frmMuller.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNewton-Cottes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewton-Cottes.Designer.cs">
+      <DependentUpon>frmNewton-Cottes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNewton.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMuller.resx">
       <DependentUpon>frmMuller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewton-Cottes.resx">
+      <DependentUpon>frmNewton-Cottes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewton.resx">
       <DependentUpon>frmNewton.cs</DependentUpon>

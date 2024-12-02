@@ -47,6 +47,8 @@
             this.multiplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trapecioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpson13ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.newtonAbiertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newtonCottesN2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,7 +161,8 @@
             this.trapecioCompuestoToolStripMenuItem,
             this.simpson13ToolStripMenuItem,
             this.simpson38ToolStripMenuItem,
-            this.multiplesToolStripMenuItem});
+            this.multiplesToolStripMenuItem,
+            this.newtonAbiertasToolStripMenuItem});
             this.integraciónToolStripMenuItem.Name = "integraciónToolStripMenuItem";
             this.integraciónToolStripMenuItem.Size = new System.Drawing.Size(79, 28);
             this.integraciónToolStripMenuItem.Text = "Integración";
@@ -168,21 +171,21 @@
             // trapecioCompuestoToolStripMenuItem
             // 
             this.trapecioCompuestoToolStripMenuItem.Name = "trapecioCompuestoToolStripMenuItem";
-            this.trapecioCompuestoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.trapecioCompuestoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.trapecioCompuestoToolStripMenuItem.Text = "Trapecio Compuesto";
             this.trapecioCompuestoToolStripMenuItem.Click += new System.EventHandler(this.trapecioCompuestoToolStripMenuItem_Click);
             // 
             // simpson13ToolStripMenuItem
             // 
             this.simpson13ToolStripMenuItem.Name = "simpson13ToolStripMenuItem";
-            this.simpson13ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.simpson13ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.simpson13ToolStripMenuItem.Text = "Simpson 1/3";
             this.simpson13ToolStripMenuItem.Click += new System.EventHandler(this.simpson13ToolStripMenuItem_Click);
             // 
             // simpson38ToolStripMenuItem
             // 
             this.simpson38ToolStripMenuItem.Name = "simpson38ToolStripMenuItem";
-            this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.simpson38ToolStripMenuItem.Text = "Simpson 3/8";
             this.simpson38ToolStripMenuItem.Click += new System.EventHandler(this.simpson38ToolStripMenuItem_Click);
             // 
@@ -192,7 +195,7 @@
             this.trapecioToolStripMenuItem,
             this.simpson13ToolStripMenuItem1});
             this.multiplesToolStripMenuItem.Name = "multiplesToolStripMenuItem";
-            this.multiplesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.multiplesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.multiplesToolStripMenuItem.Text = "Multiples";
             // 
             // trapecioToolStripMenuItem
@@ -205,9 +208,24 @@
             // simpson13ToolStripMenuItem1
             // 
             this.simpson13ToolStripMenuItem1.Name = "simpson13ToolStripMenuItem1";
-            this.simpson13ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.simpson13ToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.simpson13ToolStripMenuItem1.Text = "Simpson 1/3";
             this.simpson13ToolStripMenuItem1.Click += new System.EventHandler(this.simpson13ToolStripMenuItem1_Click);
+            // 
+            // newtonAbiertasToolStripMenuItem
+            // 
+            this.newtonAbiertasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newtonCottesN2ToolStripMenuItem});
+            this.newtonAbiertasToolStripMenuItem.Name = "newtonAbiertasToolStripMenuItem";
+            this.newtonAbiertasToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.newtonAbiertasToolStripMenuItem.Text = "Newton Abiertas";
+            // 
+            // newtonCottesN2ToolStripMenuItem
+            // 
+            this.newtonCottesN2ToolStripMenuItem.Name = "newtonCottesN2ToolStripMenuItem";
+            this.newtonCottesN2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newtonCottesN2ToolStripMenuItem.Text = "Newton-Cottes n=2";
+            this.newtonCottesN2ToolStripMenuItem.Click += new System.EventHandler(this.newtonCottesN2ToolStripMenuItem_Click);
             // 
             // frm
             // 
@@ -247,6 +265,8 @@
         private System.Windows.Forms.ToolStripMenuItem multiplesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trapecioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem simpson13ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem newtonAbiertasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newtonCottesN2ToolStripMenuItem;
     }
 }
 

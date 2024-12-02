@@ -147,5 +147,12 @@ namespace MetodosNumericos
             frmSimpson1_3Doble.Show();
             frmSimpson1_3Doble.WindowState = FormWindowState.Normal;
         }
+
+        private void newtonCottesN2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNewton_Cottes frmNewton_Cottes = new frmNewton_Cottes();
+            frmNewton_Cottes.Show();
+            frmNewton_Cottes.WindowState = FormWindowState.Normal;
+        }
     }
 }
