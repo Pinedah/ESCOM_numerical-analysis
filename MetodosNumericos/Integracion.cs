@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MetodosNumericos
 {
@@ -235,6 +236,27 @@ namespace MetodosNumericos
 
             return resultado;
         }
+
+        public float romberg(float a, float b, float errorMaximo, ref DataGridView dgv)
+        {
+            float resultado = 0;
+            float errorActual = 0;
+
+            float h = (b - a)/2;
+            //int n = (b-a) / h;
+
+            int n = 1;
+            while (errorActual <= errorMaximo)
+            {
+                float j0 = metodoTrapecio(a, b, n);
+                float j1 = metodoTrapecio(a, b, n+1);
+
+                float romberg = j1 + (j1 - j0) / 3;
+            }
+
+            return resultado;
+        }
+        
 
         float f2(float x, float y)
         {

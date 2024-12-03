@@ -154,5 +154,12 @@ namespace MetodosNumericos
             frmNewton_Cottes.Show();
             frmNewton_Cottes.WindowState = FormWindowState.Normal;
         }
+
+        private void metodoDeRombergToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRomberg frmRomberg = new frmRomberg();
+            frmRomberg.Show();
+            frmRomberg.WindowState = FormWindowState.Normal;
+        }
     }
 }

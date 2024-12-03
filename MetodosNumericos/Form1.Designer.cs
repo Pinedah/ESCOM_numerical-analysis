@@ -49,6 +49,7 @@
             this.simpson13ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newtonAbiertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newtonCottesN2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metodoDeRombergToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,7 +163,8 @@
             this.simpson13ToolStripMenuItem,
             this.simpson38ToolStripMenuItem,
             this.multiplesToolStripMenuItem,
-            this.newtonAbiertasToolStripMenuItem});
+            this.newtonAbiertasToolStripMenuItem,
+            this.metodoDeRombergToolStripMenuItem});
             this.integraciónToolStripMenuItem.Name = "integraciónToolStripMenuItem";
             this.integraciónToolStripMenuItem.Size = new System.Drawing.Size(79, 28);
             this.integraciónToolStripMenuItem.Text = "Integración";
@@ -227,6 +229,13 @@
             this.newtonCottesN2ToolStripMenuItem.Text = "Newton-Cottes n=2";
             this.newtonCottesN2ToolStripMenuItem.Click += new System.EventHandler(this.newtonCottesN2ToolStripMenuItem_Click);
             // 
+            // metodoDeRombergToolStripMenuItem
+            // 
+            this.metodoDeRombergToolStripMenuItem.Name = "metodoDeRombergToolStripMenuItem";
+            this.metodoDeRombergToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.metodoDeRombergToolStripMenuItem.Text = "Metodo de Romberg";
+            this.metodoDeRombergToolStripMenuItem.Click += new System.EventHandler(this.metodoDeRombergToolStripMenuItem_Click);
+            // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +276,7 @@
         private System.Windows.Forms.ToolStripMenuItem simpson13ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem newtonAbiertasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newtonCottesN2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metodoDeRombergToolStripMenuItem;
     }
 }
 
