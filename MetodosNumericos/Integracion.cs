@@ -284,6 +284,39 @@ namespace MetodosNumericos
             return (h / 3.0f) * (f(a) + 4 * f(a + h) + f(b));
         }
 
+        public float cuadraturaGaussiana(float a, float b)
+        {
+            // Usando el quinto polinomio de Legendre
+            // P(x) = 1/8 * (63x^5 - 70x^3 + 15x)
+            // Con raices: x1 = -0.9061798549, x2 = -0.5384693101, x3 = 0, x4 = 0.5384693101, x5 = 0.9061798459
+            // Con coeficientes: c1 = 0.2369268850, c2 = 0.4786286705, c3 = 0.5688888889, c4 = 0.4786286705, c5 = 0.2369268850
+
+            // f(x) = e^x * sin(x)
+            // x = (b - a) / 2 * t + (a + b) / 2
+            float res = 0;
+
+            float x1 = -0.9061798549f;
+            float x2 = -0.5384693101f;
+            float x3 = 0;
+            float x4 = 0.5384693101f;
+            float x5 = 0.9061798459f;
+
+            float c1 = 0.2369268850f;
+            float c2 = 0.4786286705f;
+            float c3 = 0.5688888889f;
+            float c4 = 0.4786286705f;
+            float c5 = 0.2369268850f;
+
+            res = (b - a) / 2 * (c1 * f_legendre((b - a) / 2 * x1 + (a + b) / 2) +
+                                 c2 * f_legendre((b - a) / 2 * x2 + (a + b) / 2) +
+                                 c3 * f_legendre((b - a) / 2 * x3 + (a + b) / 2) +
+                                 c4 * f_legendre((b - a) / 2 * x4 + (a + b) / 2) +
+                                 c5 * f_legendre((b - a) / 2 * x5 + (a + b) / 2));
+
+
+            return res;
+        }
+
         float f2(float x, float y)
         {
             float r;
@@ -302,6 +335,12 @@ namespace MetodosNumericos
             float r;
             r = (float)(x*x - 3*x - 1);
             // r = (float)(x * Math.Sin(x));
+            return r;
+        }
+        float f_legendre(float x)
+        {
+            float r;
+            r = (float)(Math.Pow(Math.E, x)*Math.Sin(x));
             return r;
         }
 

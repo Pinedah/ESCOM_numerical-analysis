@@ -168,5 +168,12 @@ namespace MetodosNumericos
             frmCuadraturaAdaptiva.Show();
             frmCuadraturaAdaptiva.WindowState = FormWindowState.Normal;
         }
+
+        private void cuadraturaGaussianaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCuadraturaGaussiana frmCuadraturaGaussiana = new frmCuadraturaGaussiana();
+            frmCuadraturaGaussiana.Show();
+            frmCuadraturaGaussiana.WindowState = FormWindowState.Normal;
+        }
     }
 }

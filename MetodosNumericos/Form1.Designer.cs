@@ -51,6 +51,7 @@
             this.newtonCottesN2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodoDeRombergToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuadraturaAdaptivaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuadraturaGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,7 +167,8 @@
             this.multiplesToolStripMenuItem,
             this.newtonAbiertasToolStripMenuItem,
             this.metodoDeRombergToolStripMenuItem,
-            this.cuadraturaAdaptivaToolStripMenuItem});
+            this.cuadraturaAdaptivaToolStripMenuItem,
+            this.cuadraturaGaussianaToolStripMenuItem});
             this.integraciónToolStripMenuItem.Name = "integraciónToolStripMenuItem";
             this.integraciónToolStripMenuItem.Size = new System.Drawing.Size(79, 28);
             this.integraciónToolStripMenuItem.Text = "Integración";
@@ -245,6 +247,13 @@
             this.cuadraturaAdaptivaToolStripMenuItem.Text = "Cuadratura Adaptiva";
             this.cuadraturaAdaptivaToolStripMenuItem.Click += new System.EventHandler(this.cuadraturaAdaptivaToolStripMenuItem_Click);
             // 
+            // cuadraturaGaussianaToolStripMenuItem
+            // 
+            this.cuadraturaGaussianaToolStripMenuItem.Name = "cuadraturaGaussianaToolStripMenuItem";
+            this.cuadraturaGaussianaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.cuadraturaGaussianaToolStripMenuItem.Text = "Cuadratura Gaussiana";
+            this.cuadraturaGaussianaToolStripMenuItem.Click += new System.EventHandler(this.cuadraturaGaussianaToolStripMenuItem_Click);
+            // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +296,7 @@
         private System.Windows.Forms.ToolStripMenuItem newtonCottesN2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem metodoDeRombergToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuadraturaAdaptivaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cuadraturaGaussianaToolStripMenuItem;
     }
 }
 
