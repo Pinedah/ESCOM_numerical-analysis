@@ -175,5 +175,12 @@ namespace MetodosNumericos
             frmCuadraturaGaussiana.Show();
             frmCuadraturaGaussiana.WindowState = FormWindowState.Normal;
         }
+
+        private void metodoDeEulerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMetodoDeEuler frmMetodoDeEuler = new frmMetodoDeEuler();
+            frmMetodoDeEuler.Show();
+            frmMetodoDeEuler.WindowState = FormWindowState.Normal;
+        }
     }
 }

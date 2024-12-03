@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EcuacionesDiferenciales.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +102,12 @@
     </Compile>
     <Compile Include="frmDeflacion.Designer.cs">
       <DependentUpon>frmDeflacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetodoDeEuler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetodoDeEuler.Designer.cs">
+      <DependentUpon>frmMetodoDeEuler.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMuller.cs">
       <SubType>Form</SubType>
@@ -207,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDeflacion.resx">
       <DependentUpon>frmDeflacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetodoDeEuler.resx">
+      <DependentUpon>frmMetodoDeEuler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMuller.resx">
       <DependentUpon>frmMuller.cs</DependentUpon>

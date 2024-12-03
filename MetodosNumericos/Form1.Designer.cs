@@ -52,6 +52,9 @@
             this.metodoDeRombergToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuadraturaAdaptivaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuadraturaGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ecuacionesDiferencialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metodoDeEulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metodoDeTaylorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,10 +63,11 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.raicesDeEcuacionesToolStripMenuItem,
-            this.integraciónToolStripMenuItem});
+            this.integraciónToolStripMenuItem,
+            this.ecuacionesDiferencialesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(384, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(538, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -254,12 +258,34 @@
             this.cuadraturaGaussianaToolStripMenuItem.Text = "Cuadratura Gaussiana";
             this.cuadraturaGaussianaToolStripMenuItem.Click += new System.EventHandler(this.cuadraturaGaussianaToolStripMenuItem_Click);
             // 
+            // ecuacionesDiferencialesToolStripMenuItem
+            // 
+            this.ecuacionesDiferencialesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.metodoDeEulerToolStripMenuItem,
+            this.metodoDeTaylorToolStripMenuItem});
+            this.ecuacionesDiferencialesToolStripMenuItem.Name = "ecuacionesDiferencialesToolStripMenuItem";
+            this.ecuacionesDiferencialesToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
+            this.ecuacionesDiferencialesToolStripMenuItem.Text = "Ecuaciones Diferenciales";
+            // 
+            // metodoDeEulerToolStripMenuItem
+            // 
+            this.metodoDeEulerToolStripMenuItem.Name = "metodoDeEulerToolStripMenuItem";
+            this.metodoDeEulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.metodoDeEulerToolStripMenuItem.Text = "Metodo de Euler";
+            this.metodoDeEulerToolStripMenuItem.Click += new System.EventHandler(this.metodoDeEulerToolStripMenuItem_Click);
+            // 
+            // metodoDeTaylorToolStripMenuItem
+            // 
+            this.metodoDeTaylorToolStripMenuItem.Name = "metodoDeTaylorToolStripMenuItem";
+            this.metodoDeTaylorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.metodoDeTaylorToolStripMenuItem.Text = "Metodo de Taylor";
+            // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumPurple;
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.ClientSize = new System.Drawing.Size(538, 90);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frm";
             this.Text = "Menú Principal";
@@ -297,6 +323,9 @@
         private System.Windows.Forms.ToolStripMenuItem metodoDeRombergToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuadraturaAdaptivaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuadraturaGaussianaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ecuacionesDiferencialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metodoDeEulerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metodoDeTaylorToolStripMenuItem;
     }
 }
 
