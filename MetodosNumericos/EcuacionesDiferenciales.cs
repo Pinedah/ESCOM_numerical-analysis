@@ -32,6 +32,11 @@ namespace MetodosNumericos
         {
             float res = 0;
 
+            float yi = taylor2(condicion, h);
+
+            for (int i = 0; i < 1000; i++)
+                res = taylor2(yi, h);
+
             return res;
         }
         float taylor2(float yi, float h)

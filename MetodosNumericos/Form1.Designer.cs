@@ -279,6 +279,7 @@
             this.metodoDeTaylorToolStripMenuItem.Name = "metodoDeTaylorToolStripMenuItem";
             this.metodoDeTaylorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.metodoDeTaylorToolStripMenuItem.Text = "Metodo de Taylor";
+            this.metodoDeTaylorToolStripMenuItem.Click += new System.EventHandler(this.metodoDeTaylorToolStripMenuItem_Click);
             // 
             // frm
             // 

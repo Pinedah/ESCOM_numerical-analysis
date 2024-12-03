@@ -181,6 +181,12 @@
     <Compile Include="frmSteffensen.Designer.cs">
       <DependentUpon>frmSteffensen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMetodoDeTaylor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetodoDeTaylor.Designer.cs">
+      <DependentUpon>frmMetodoDeTaylor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrapecio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMetodoDeEuler.resx">
       <DependentUpon>frmMetodoDeEuler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetodoDeTaylor.resx">
+      <DependentUpon>frmMetodoDeTaylor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMuller.resx">
       <DependentUpon>frmMuller.cs</DependentUpon>

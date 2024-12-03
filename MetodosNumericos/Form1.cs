@@ -182,5 +182,12 @@ namespace MetodosNumericos
             frmMetodoDeEuler.Show();
             frmMetodoDeEuler.WindowState = FormWindowState.Normal;
         }
+
+        private void metodoDeTaylorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMetodoDeTaylor frmMetodoDeTaylor = new frmMetodoDeTaylor();
+            frmMetodoDeTaylor.Show();
+            frmMetodoDeTaylor.WindowState = FormWindowState.Normal;
+        }
     }
 }
