@@ -161,5 +161,12 @@ namespace MetodosNumericos
             frmRomberg.Show();
             frmRomberg.WindowState = FormWindowState.Normal;
         }
+
+        private void cuadraturaAdaptivaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCuadraturaAdaptiva frmCuadraturaAdaptiva = new frmCuadraturaAdaptiva();
+            frmCuadraturaAdaptiva.Show();
+            frmCuadraturaAdaptiva.WindowState = FormWindowState.Normal;
+        }
     }
 }

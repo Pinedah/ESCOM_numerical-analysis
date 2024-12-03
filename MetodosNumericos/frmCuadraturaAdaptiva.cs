@@ -10,35 +10,26 @@ using System.Windows.Forms;
 
 namespace MetodosNumericos
 {
-    public partial class frmRomberg : Form
+    public partial class frmCuadraturaAdaptiva : Form
     {
-        public frmRomberg()
+        public frmCuadraturaAdaptiva()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_calcular_Click(object sender, EventArgs e)
         {
             float a, b;
-            int n;
             float errorMax;
-            int numMaxIte;
-            bool res;
 
             a = float.Parse(tf_a.Text);
             b = float.Parse(tf_b.Text);
-            n = int.Parse(tf_n.Text);
             errorMax = float.Parse(tf_error.Text);
-            // numMaxIte = int.Parse(numMaxIterMu.Text);
 
             Integracion integracion = new Integracion();
-            
-            //res = integracion.romberg(a, b, n, errorMax, ref this.dgv_result);
+
+            float res = integracion.cuadraturaAdaptiva(a, b, errorMax);
+            tf_res.Text = res.ToString();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MathNet.Numerics;
 using MathNet.Numerics.LinearAlgebra.Complex.Solvers;
+using Microsoft.FSharp.Data.UnitSystems.SI.UnitNames;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -237,6 +238,7 @@ namespace MetodosNumericos
             return resultado;
         }
 
+        /*
         public float romberg(float a, float b, float errorMaximo, ref DataGridView dgv)
         {
             float resultado = 0;
@@ -255,8 +257,32 @@ namespace MetodosNumericos
             }
 
             return resultado;
+        }*/
+
+        public float cuadraturaAdaptiva(float a, float b, float errorMaximo)
+        {
+            
+            float mid = (float)(a + b) / 2.0f;
+
+            float S = SimpsonSimple1_3(a, b);
+            float S1 = SimpsonSimple1_3(a, mid);
+            float S2 = SimpsonSimple1_3(mid, b);
+
+            float error = Math.Abs(S - (S1 + S2)) / 15.0f;
+
+            if (error <= errorMaximo)
+            {
+                return S1 + S2 + error;
+            }
+
+            return cuadraturaAdaptiva(a, mid, errorMaximo / 2.0f) + cuadraturaAdaptiva(mid, b, errorMaximo / 2.0f);
+
         }
-        
+        public float SimpsonSimple1_3(float a, float b)
+        {
+            float h = (b - a) / 2.0f;
+            return (h / 3.0f) * (f(a) + 4 * f(a + h) + f(b));
+        }
 
         float f2(float x, float y)
         {
