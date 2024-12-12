@@ -189,5 +189,10 @@ namespace MetodosNumericos
             frmMetodoDeTaylor.Show();
             frmMetodoDeTaylor.WindowState = FormWindowState.Normal;
         }
+
+        private void dToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

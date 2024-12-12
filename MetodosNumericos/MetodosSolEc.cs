@@ -61,7 +61,7 @@ namespace MetodosNumericos
 
                 if (errorActual <= errorMaximo)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 if (Func(a) * Func(c) < 0)
@@ -172,7 +172,7 @@ namespace MetodosNumericos
 
                 if (errorActual <= errorMaximo)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
 
@@ -209,7 +209,7 @@ namespace MetodosNumericos
                 if (errorActual <= errorMaximoComplex.Magnitude)
                 {
                     float p3real = (float)p3.Real;
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + p3real.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + p3real.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 p0=p1; p1 = p2; p2 = p3;
@@ -281,7 +281,7 @@ namespace MetodosNumericos
 
                 if (ErrorAct <= errorMaximo)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + p.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + p.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
 
                 }
@@ -330,7 +330,7 @@ namespace MetodosNumericos
 
                 if (errorActual <= errorMaximo)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + pi.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + pi.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
 
@@ -368,7 +368,7 @@ namespace MetodosNumericos
 
                 if (errorActual <= errorMaximo)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + po.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + po.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
 
@@ -414,7 +414,7 @@ namespace MetodosNumericos
 
                 if (errorActual <= errorMaximo)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + po.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + po.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 po = p;
@@ -578,7 +578,7 @@ namespace MetodosNumericos
 
                 if (errorActual <= errorMaximo)
                 {
-                    MessageBox.Show("Se obvtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se obtuvo la aproximacion a la raiz con el error deseado. \nRaiz = " + c.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
 

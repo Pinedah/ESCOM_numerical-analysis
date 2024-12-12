@@ -27,18 +27,17 @@ namespace MetodosNumericos
             float a, b;
             int n;
             float errorMax;
-            int numMaxIte;
-            bool res;
+            float res;
 
             a = float.Parse(tf_a.Text);
             b = float.Parse(tf_b.Text);
             n = int.Parse(tf_n.Text);
             errorMax = float.Parse(tf_error.Text);
-            // numMaxIte = int.Parse(numMaxIterMu.Text);
 
             Integracion integracion = new Integracion();
             
-            //res = integracion.romberg(a, b, n, errorMax, ref this.dgv_result);
+            res = integracion.Romberg(a, b, n, errorMax, ref this.dgv_result);
+            tf_res.Text=res.ToString();
         }
     }
 }

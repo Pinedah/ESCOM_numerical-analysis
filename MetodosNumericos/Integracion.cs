@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -316,7 +317,58 @@ namespace MetodosNumericos
 
             return res;
         }
+        public float Romberg(float a, float b, int n, float error, ref DataGridView dgvResultado)
+        {
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
 
+            dgvResultado.Columns.Add("iteracion", "K");
+            for (int i = 1; i <= n; i++)
+            {
+                dgvResultado.Columns.Add($"K{i}", $"h^{i}");
+            }
+
+            double[,] R = new double[n, n];
+            double h = b - a;
+            R[0, 0] = (h / 2) * (fRomberg(a) + fRomberg(b));
+
+            dgvResultado.Rows.Add();
+            dgvResultado.Rows[0].Cells[0].Value = 1;
+            dgvResultado.Rows[0].Cells[1].Value = R[0, 0];
+            for (int i = 1; i <= n; i++)
+            {
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i].Cells[0].Value = i + 1;
+                double sum = 0;
+                int numPuntos = (int)Math.Pow(2, i - 1);
+                for (int k = 1; k <= numPuntos; k++)
+                {
+                    sum += fRomberg(a + (k - 0.5) * h);
+                }
+                R[i, 0] = 0.5 * (R[i - 1, 0] + h * sum);
+                dgvResultado.Rows[i].Cells[1].Value = R[i, 0];
+
+                
+                for (int j = 1; j <= i; j++)
+                {
+                    R[i, j] = R[i, j - 1] + (R[i, j - 1] - R[i - 1, j - 1]) / (Math.Pow(4, j) - 1);
+                    dgvResultado.Rows[i].Cells[j + 1].Value = R[i, j];
+                }
+
+                
+                if (i > 0 && Math.Abs(R[i, i] - R[i - 1, i - 1]) < error)
+                {
+                    float result = (float)R[i, i];
+                    
+                    return result;
+                }
+                h /= 2;
+            }
+
+            float finalResult = (float)R[n - 1, n - 1];
+            
+            return finalResult;
+        }
         float f2(float x, float y)
         {
             float r;
@@ -342,6 +394,10 @@ namespace MetodosNumericos
             float r;
             r = (float)(Math.Pow(Math.E, x)*Math.Sin(x));
             return r;
+        }
+        private double fRomberg(double x)
+        { 
+            return x*Math.Sin(x);
         }
 
     }
