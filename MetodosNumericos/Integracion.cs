@@ -164,23 +164,39 @@ namespace MetodosNumericos
             float resultado = 0.0f;
             float sum1, sum2,sum3;
             sum1 = sum2 = sum3 = 0;
+
+            // primer evaluacion en f
             resultado += f2(x0, y0);
+            Console.WriteLine("f(x0, y0) = " + f2(x0, y0));
+
+            // primer sumatorio de ky
             for (int j = 1; j <= ky; j++)
             {
                 sum1 += f2(x0, y0 + (2 * j - 1) * hy);
             }
             sum1 *= 4;
+            Console.WriteLine("Sumatoria hasta Ky con x0: " + sum1);
             resultado += sum1;
             sum1 = 0;
 
+            // segunda sumatoria de ky-1
             for (int j = 1; j < ky; j++)
             {
                 sum1 += f2(x0, y0 + 2 * j * hy);
             }
             sum1 *= 2;
+            Console.WriteLine("Sumatoria hasta Ky-1 con x0: " + sum1);
             resultado += sum1;
+
+            // segunda evaluacion en f
             resultado += f2(x0, yn);
+            Console.WriteLine("f(x0, yn) = " + f2(x0, yn));
             sum1 = 0;
+
+            // --------------------------------------------- 
+
+
+            // sumatorias de kx 
             for (int i = 1; i <= kx; i++)
             {
                 sum1 += f2(x0 + (2 * i - 1) * hx, y0);
@@ -189,12 +205,14 @@ namespace MetodosNumericos
                     sum2 += f2(x0 + (2 * i - 1) * hx, y0 + (2 * j - 1) * hy);
                 for (int j = 1; j < ky; j++)
                     sum3 += f2(x0 + (2 * i - 1) * hx, y0 + 2 * j * hy);
-                resultado += (4 * (sum1 + 4 * sum2 + 2 * sum3));
+                float a = (4 * (sum1 + 4 * sum2 + 2 * sum3));
+                Console.WriteLine("Sumatoria de kx acumulada: " + a);
+                resultado += a;
                 sum1 = sum2 = sum3 = 0;
             }
-            
-         
-            for(int i = 1; i<kx; i++)
+
+            // sumatorias de kx-1
+            for (int i = 1; i<kx; i++)
             {
                 sum1 += f2(x0+2*i*hx,y0);
                 sum1 += f2(x0 + 2 * i * hx, yn);
@@ -202,29 +220,43 @@ namespace MetodosNumericos
                     sum2 += f2(x0 + 2 * i * hx,y0 + (2 * j - 1) * hy);
                 for (int j = 1; j < ky; j++)
                     sum3 += f2(x0 + 2 * i * hx, y0 + 2 * j * hy);
+                float b = (4 * (sum1 + 4 * sum2 + 2 * sum3));
+                Console.WriteLine("Sumatoria de kx-1 acumulada: " + b);
                 resultado += (2 * (sum1 + 4 * sum2 + 2 * sum3));
                 sum1 = sum2 = sum3 = 0;
             }
 
+            // tercera evaluacion en f
             resultado += f2(xn, y0);
+            Console.WriteLine("f(xn, y0) = " + f2(xn, y0));
+
+            // sumatoria de ky con xn
             for (int j = 1; j <= ky; j++)
             {
                 sum1 += f2(xn, y0 + (2 * j - 1) * hy);
             }
             sum1 *= 4;
+            Console.WriteLine("Sumatoria de ky con xn: " + sum1);
             resultado += sum1;
             sum1 = 0;
 
+            // sumatorioa de ky-1 con xn
             for (int j = 1; j < ky; j++)
             {
                 sum1 += f2(xn, y0 + 2 * j * hy);
             }
             sum1 *= 2;
+            Console.WriteLine("Sumatoria de ky-1 con xn: " + sum1);
             resultado += sum1;
             sum1 = 0;
 
+            // ultima evaluacion f 
             resultado += f2(xn, yn);
+            Console.WriteLine("f(xn, yn) = " + f2(xn, yn));
+
+            // multiplicacion de h
             resultado *= (hx * hy / 9.0f);
+            Console.WriteLine("Resultado final: " + resultado);
             return resultado;
 
         }
@@ -262,7 +294,7 @@ namespace MetodosNumericos
 
         public float cuadraturaAdaptiva(float a, float b, float errorMaximo)
         {
-            
+            Console.WriteLine("a:\t" + a + "\t\t\tb:\t" + b + "\t\t\terrorMaximo:\t" + errorMaximo);
             float mid = (float)(a + b) / 2.0f;
 
             float S = SimpsonSimple1_3(a, b);
@@ -372,14 +404,14 @@ namespace MetodosNumericos
         float f2(float x, float y)
         {
             float r;
-            r = (float)(Math.Sqrt(x*x + y*y) * Math.Sin(Math.Sqrt(x*x + y*y)));
+            r = (float)(Math.Pow(x, 2) - 2*Math.Pow(y, 2) + x*Math.Pow(y, 3));
             return r;
         }
 
         float f(float x)
         {
             float r;
-            r = (float) (x * Math.Sin(x));
+            r = (float)(20 + 10*Math.Sin((Math.PI/12)*(x - 10)));
             return r;
         }
         float f_newtonCottes(float x)
@@ -397,7 +429,7 @@ namespace MetodosNumericos
         }
         private double fRomberg(double x)
         { 
-            return x*Math.Sin(x);
+            return (float)(9 + 5*Math.Pow(Math.Cos(0.4*x), 2))*(5 * Math.Pow(Math.E, -0.5*x) + 2 * Math.Pow(Math.E, 0.15*x));
         }
 
     }

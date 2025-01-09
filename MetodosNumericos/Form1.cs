@@ -194,5 +194,12 @@ namespace MetodosNumericos
         {
 
         }
+
+        private void eliminacionGaussianaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEliminacionGaussiana frmEliminacionGaussiana = new frmEliminacionGaussiana();
+            frmEliminacionGaussiana.Show();
+            frmEliminacionGaussiana.WindowState = FormWindowState.Normal;
+        }
     }
 }

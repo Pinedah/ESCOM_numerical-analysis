@@ -40,6 +40,7 @@
             this.métodoDeBiseccionAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.métodoDeLaSecanteAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deflaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.integraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trapecioCompuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpson13ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,8 @@
             this.ecuacionesDiferencialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodoDeEulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodoDeTaylorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sistemasDeEcuacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminacionGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,10 +68,11 @@
             this.raicesDeEcuacionesToolStripMenuItem,
             this.dToolStripMenuItem,
             this.integraciónToolStripMenuItem,
-            this.ecuacionesDiferencialesToolStripMenuItem});
+            this.ecuacionesDiferencialesToolStripMenuItem,
+            this.sistemasDeEcuacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(735, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(905, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -163,6 +166,15 @@
             this.deflaciónToolStripMenuItem.Size = new System.Drawing.Size(340, 26);
             this.deflaciónToolStripMenuItem.Text = "Deflación";
             this.deflaciónToolStripMenuItem.Click += new System.EventHandler(this.deflaciónToolStripMenuItem_Click);
+            // 
+            // dToolStripMenuItem
+            // 
+            this.dToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dToolStripMenuItem.Name = "dToolStripMenuItem";
+            this.dToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
+            this.dToolStripMenuItem.Text = "Derivación";
+            this.dToolStripMenuItem.Click += new System.EventHandler(this.dToolStripMenuItem_Click);
             // 
             // integraciónToolStripMenuItem
             // 
@@ -287,21 +299,27 @@
             this.metodoDeTaylorToolStripMenuItem.Text = "Metodo de Taylor";
             this.metodoDeTaylorToolStripMenuItem.Click += new System.EventHandler(this.metodoDeTaylorToolStripMenuItem_Click);
             // 
-            // dToolStripMenuItem
+            // sistemasDeEcuacionesToolStripMenuItem
             // 
-            this.dToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dToolStripMenuItem.Name = "dToolStripMenuItem";
-            this.dToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
-            this.dToolStripMenuItem.Text = "Derivación";
-            this.dToolStripMenuItem.Click += new System.EventHandler(this.dToolStripMenuItem_Click);
+            this.sistemasDeEcuacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminacionGaussianaToolStripMenuItem});
+            this.sistemasDeEcuacionesToolStripMenuItem.Name = "sistemasDeEcuacionesToolStripMenuItem";
+            this.sistemasDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.sistemasDeEcuacionesToolStripMenuItem.Text = "Sistemas De Ecuaciones";
+            // 
+            // eliminacionGaussianaToolStripMenuItem
+            // 
+            this.eliminacionGaussianaToolStripMenuItem.Name = "eliminacionGaussianaToolStripMenuItem";
+            this.eliminacionGaussianaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.eliminacionGaussianaToolStripMenuItem.Text = "Eliminacion Gaussiana";
+            this.eliminacionGaussianaToolStripMenuItem.Click += new System.EventHandler(this.eliminacionGaussianaToolStripMenuItem_Click);
             // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumPurple;
-            this.ClientSize = new System.Drawing.Size(735, 329);
+            this.ClientSize = new System.Drawing.Size(905, 221);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "frm";
@@ -344,6 +362,8 @@
         private System.Windows.Forms.ToolStripMenuItem metodoDeEulerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem metodoDeTaylorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sistemasDeEcuacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminacionGaussianaToolStripMenuItem;
     }
 }
 

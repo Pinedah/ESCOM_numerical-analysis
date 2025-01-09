@@ -104,6 +104,12 @@
     <Compile Include="frmDeflacion.Designer.cs">
       <DependentUpon>frmDeflacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEliminacionGaussiana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminacionGaussiana.Designer.cs">
+      <DependentUpon>frmEliminacionGaussiana.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMetodoDeEuler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,7 @@
     <Compile Include="MetodosSolEc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SistemasEcuaciones.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDeflacion.resx">
       <DependentUpon>frmDeflacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminacionGaussiana.resx">
+      <DependentUpon>frmEliminacionGaussiana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMetodoDeEuler.resx">
       <DependentUpon>frmMetodoDeEuler.cs</DependentUpon>
