@@ -12,8 +12,24 @@ namespace MetodosNumericos
         public int NumIncognitas;
         public float[,] MatrizAumentada;
 
+        private void imprimirMatriz(int n, ref float[,] MatrizA)
+        {
+            for (int k = 0; k < NumIncognitas; k++)
+            {
+                for (int l = 0; l <= NumIncognitas; l++)
+                {
+                    Console.Write(MatrizA[k, l] + ' ');
+                }
+                Console.WriteLine("");
+            }
+        }
+
         public bool ElimGaussiana(int n, ref float[,] Mat)
         {
+
+            Console.Write("panke");
+            imprimirMatriz(n, ref Mat);
+
             int i, j, r;
             float Multiplicador;
             
