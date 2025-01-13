@@ -181,6 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumPurple;
             this.ClientSize = new System.Drawing.Size(827, 410);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tf_n);
@@ -197,6 +198,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmMetodoDeTaylor";
             this.Text = "frmTaylor";
+            this.Load += new System.EventHandler(this.frmMetodoDeTaylor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

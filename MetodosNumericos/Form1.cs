@@ -215,5 +215,12 @@ namespace MetodosNumericos
             frmMetodoHeun.Show();
             frmMetodoHeun.WindowState = FormWindowState.Normal;
         }
+
+        private void sEDOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSEDO frmsedo = new frmSEDO();
+            frmsedo.Show();
+            frmsedo.WindowState = FormWindowState.Normal;
+        }
     }
 }

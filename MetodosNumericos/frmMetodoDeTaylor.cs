@@ -94,5 +94,10 @@ namespace MetodosNumericos
         {
 
         }
+
+        private void frmMetodoDeTaylor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
