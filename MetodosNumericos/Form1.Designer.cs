@@ -58,6 +58,8 @@
             this.metodoDeTaylorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemasDeEcuacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminacionGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metodoDeRungeKuttaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metodoDeHeunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -279,7 +281,9 @@
             this.ecuacionesDiferencialesToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ecuacionesDiferencialesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.metodoDeEulerToolStripMenuItem,
-            this.metodoDeTaylorToolStripMenuItem});
+            this.metodoDeTaylorToolStripMenuItem,
+            this.metodoDeRungeKuttaToolStripMenuItem,
+            this.metodoDeHeunToolStripMenuItem});
             this.ecuacionesDiferencialesToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ecuacionesDiferencialesToolStripMenuItem.Name = "ecuacionesDiferencialesToolStripMenuItem";
             this.ecuacionesDiferencialesToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
@@ -313,6 +317,20 @@
             this.eliminacionGaussianaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.eliminacionGaussianaToolStripMenuItem.Text = "Eliminacion Gaussiana";
             this.eliminacionGaussianaToolStripMenuItem.Click += new System.EventHandler(this.eliminacionGaussianaToolStripMenuItem_Click);
+            // 
+            // metodoDeRungeKuttaToolStripMenuItem
+            // 
+            this.metodoDeRungeKuttaToolStripMenuItem.Name = "metodoDeRungeKuttaToolStripMenuItem";
+            this.metodoDeRungeKuttaToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.metodoDeRungeKuttaToolStripMenuItem.Text = "Metodo de Runge-Kutta";
+            this.metodoDeRungeKuttaToolStripMenuItem.Click += new System.EventHandler(this.metodoDeRungeKuttaToolStripMenuItem_Click);
+            // 
+            // metodoDeHeunToolStripMenuItem
+            // 
+            this.metodoDeHeunToolStripMenuItem.Name = "metodoDeHeunToolStripMenuItem";
+            this.metodoDeHeunToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.metodoDeHeunToolStripMenuItem.Text = "Metodo de Heun";
+            this.metodoDeHeunToolStripMenuItem.Click += new System.EventHandler(this.metodoDeHeunToolStripMenuItem_Click);
             // 
             // frm
             // 
@@ -364,6 +382,8 @@
         private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sistemasDeEcuacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminacionGaussianaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metodoDeRungeKuttaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metodoDeHeunToolStripMenuItem;
     }
 }
 

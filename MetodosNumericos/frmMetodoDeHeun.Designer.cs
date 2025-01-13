@@ -1,6 +1,6 @@
 ﻿namespace MetodosNumericos
 {
-    partial class frmMetodoDeTaylor
+    partial class frmMetodoDeHeun
     {
         /// <summary>
         /// Required designer variable.
@@ -48,140 +48,128 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(189, 95);
+            this.label6.Location = new System.Drawing.Point(165, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 22);
-            this.label6.TabIndex = 63;
+            this.label6.TabIndex = 76;
             this.label6.Text = "n:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // tf_n
             // 
             this.tf_n.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tf_n.Location = new System.Drawing.Point(238, 89);
+            this.tf_n.Location = new System.Drawing.Point(214, 107);
             this.tf_n.Name = "tf_n";
             this.tf_n.Size = new System.Drawing.Size(100, 29);
-            this.tf_n.TabIndex = 62;
-            this.tf_n.TextChanged += new System.EventHandler(this.tf_n_TextChanged);
+            this.tf_n.TabIndex = 75;
             // 
             // dgv_result
             // 
             this.dgv_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_result.Location = new System.Drawing.Point(238, 148);
+            this.dgv_result.Location = new System.Drawing.Point(59, 166);
             this.dgv_result.Name = "dgv_result";
-            this.dgv_result.Size = new System.Drawing.Size(427, 251);
-            this.dgv_result.TabIndex = 61;
-            this.dgv_result.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_result_CellContentClick);
+            this.dgv_result.Size = new System.Drawing.Size(665, 251);
+            this.dgv_result.TabIndex = 74;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(529, 98);
+            this.label3.Location = new System.Drawing.Point(505, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 22);
-            this.label3.TabIndex = 60;
+            this.label3.TabIndex = 73;
             this.label3.Text = "Resultado:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tf_res
             // 
             this.tf_res.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tf_res.Location = new System.Drawing.Point(625, 95);
+            this.tf_res.Location = new System.Drawing.Point(601, 113);
             this.tf_res.Name = "tf_res";
             this.tf_res.Size = new System.Drawing.Size(123, 29);
-            this.tf_res.TabIndex = 59;
-            this.tf_res.TextChanged += new System.EventHandler(this.tf_res_TextChanged);
+            this.tf_res.TabIndex = 72;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(79, 54);
+            this.label2.Location = new System.Drawing.Point(55, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 22);
-            this.label2.TabIndex = 58;
+            this.label2.TabIndex = 71;
             this.label2.Text = "Condicion Inicial:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btn_calcular
             // 
             this.btn_calcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_calcular.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_calcular.Location = new System.Drawing.Point(625, 37);
+            this.btn_calcular.Location = new System.Drawing.Point(601, 55);
             this.btn_calcular.Name = "btn_calcular";
             this.btn_calcular.Size = new System.Drawing.Size(123, 39);
-            this.btn_calcular.TabIndex = 57;
+            this.btn_calcular.TabIndex = 70;
             this.btn_calcular.Text = "CALCULAR";
             this.btn_calcular.UseVisualStyleBackColor = true;
-            this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click_1);
+            this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click);
             // 
             // tf_b
             // 
             this.tf_b.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tf_b.Location = new System.Drawing.Point(408, 86);
+            this.tf_b.Location = new System.Drawing.Point(384, 104);
             this.tf_b.Name = "tf_b";
             this.tf_b.Size = new System.Drawing.Size(100, 29);
-            this.tf_b.TabIndex = 56;
-            this.tf_b.TextChanged += new System.EventHandler(this.tf_b_TextChanged);
+            this.tf_b.TabIndex = 69;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(381, 91);
+            this.label5.Location = new System.Drawing.Point(357, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 22);
-            this.label5.TabIndex = 55;
+            this.label5.TabIndex = 68;
             this.label5.Text = "b:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tf_a
             // 
             this.tf_a.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tf_a.Location = new System.Drawing.Point(408, 47);
+            this.tf_a.Location = new System.Drawing.Point(384, 65);
             this.tf_a.Name = "tf_a";
             this.tf_a.Size = new System.Drawing.Size(100, 29);
-            this.tf_a.TabIndex = 54;
-            this.tf_a.TextChanged += new System.EventHandler(this.tf_a_TextChanged);
+            this.tf_a.TabIndex = 67;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(381, 50);
+            this.label4.Location = new System.Drawing.Point(357, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 22);
-            this.label4.TabIndex = 53;
+            this.label4.TabIndex = 66;
             this.label4.Text = "a:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tf_condicion
             // 
             this.tf_condicion.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tf_condicion.Location = new System.Drawing.Point(238, 50);
+            this.tf_condicion.Location = new System.Drawing.Point(214, 68);
             this.tf_condicion.Name = "tf_condicion";
             this.tf_condicion.Size = new System.Drawing.Size(100, 29);
-            this.tf_condicion.TabIndex = 52;
-            this.tf_condicion.TextChanged += new System.EventHandler(this.tf_condicion_TextChanged);
+            this.tf_condicion.TabIndex = 65;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(277, 9);
+            this.label1.Location = new System.Drawing.Point(255, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(347, 22);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "MÉTODO DE TAYLOR DE ORDEN 2";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(301, 22);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "MÉTODO DE RUNGE-KUTTA 4";
             // 
-            // frmMetodoDeTaylor
+            // frmMetodoDeHeun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 410);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tf_n);
             this.Controls.Add(this.dgv_result);
@@ -195,8 +183,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tf_condicion);
             this.Controls.Add(this.label1);
-            this.Name = "frmMetodoDeTaylor";
-            this.Text = "frmTaylor";
+            this.Name = "frmMetodoDeHeun";
+            this.Text = "frmMetodoDeHeun";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

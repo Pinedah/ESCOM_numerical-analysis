@@ -17,18 +17,82 @@ namespace MetodosNumericos
             InitializeComponent();
         }
 
-        private void btn_calcular_Click(object sender, EventArgs e)
+        
+
+        private void label1_Click(object sender, EventArgs e)
         {
-            float condicion, h, error;
 
+        }
+
+        private void tf_n_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_result_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_res_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_calcular_Click_1(object sender, EventArgs e)
+        {
+
+            float condicion, a, b, n;
+            float res;
             condicion = float.Parse(tf_condicion.Text);
-            h = float.Parse(tf_h.Text);
-            error = float.Parse(tf_error.Text);
+            a = float.Parse(tf_a.Text);
+            b = float.Parse(tf_b.Text);
+            n = int.Parse(tf_n.Text);
 
-            EcuacionesDiferenciales ed = new EcuacionesDiferenciales();
+            EcuacionesDiferenciales ecDif = new EcuacionesDiferenciales();
 
-            float res = ed.metodoDeTaylor(condicion, h, error);
+            res = ecDif.metodoDeTaylor(condicion, a, b, n, ref this.dgv_result);
             tf_res.Text = res.ToString();
+        }
+
+        private void tf_b_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_a_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_condicion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

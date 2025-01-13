@@ -53,6 +53,7 @@
             this.label3.Size = new System.Drawing.Size(95, 22);
             this.label3.TabIndex = 34;
             this.label3.Text = "Resultado:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tf_res
             // 
@@ -61,6 +62,7 @@
             this.tf_res.Name = "tf_res";
             this.tf_res.Size = new System.Drawing.Size(123, 29);
             this.tf_res.TabIndex = 33;
+            this.tf_res.TextChanged += new System.EventHandler(this.tf_res_TextChanged);
             // 
             // label2
             // 
@@ -71,6 +73,7 @@
             this.label2.Size = new System.Drawing.Size(25, 22);
             this.label2.TabIndex = 32;
             this.label2.Text = "n:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btn_calcular
             // 
@@ -91,6 +94,7 @@
             this.tf_b.Name = "tf_b";
             this.tf_b.Size = new System.Drawing.Size(100, 29);
             this.tf_b.TabIndex = 30;
+            this.tf_b.TextChanged += new System.EventHandler(this.tf_b_TextChanged);
             // 
             // label5
             // 
@@ -101,6 +105,7 @@
             this.label5.Size = new System.Drawing.Size(25, 22);
             this.label5.TabIndex = 29;
             this.label5.Text = "b:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tf_a
             // 
@@ -109,6 +114,7 @@
             this.tf_a.Name = "tf_a";
             this.tf_a.Size = new System.Drawing.Size(100, 29);
             this.tf_a.TabIndex = 28;
+            this.tf_a.TextChanged += new System.EventHandler(this.tf_a_TextChanged);
             // 
             // label4
             // 
@@ -119,6 +125,7 @@
             this.label4.Size = new System.Drawing.Size(24, 22);
             this.label4.TabIndex = 27;
             this.label4.Text = "a:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tf_n
             // 
@@ -127,6 +134,7 @@
             this.tf_n.Name = "tf_n";
             this.tf_n.Size = new System.Drawing.Size(100, 29);
             this.tf_n.TabIndex = 26;
+            this.tf_n.TextChanged += new System.EventHandler(this.tf_n_TextChanged);
             // 
             // label1
             // 
@@ -147,6 +155,7 @@
             this.dgv_result.Name = "dgv_result";
             this.dgv_result.Size = new System.Drawing.Size(712, 251);
             this.dgv_result.TabIndex = 35;
+            this.dgv_result.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_result_CellContentClick);
             // 
             // label6
             // 
@@ -157,6 +166,7 @@
             this.label6.Size = new System.Drawing.Size(59, 22);
             this.label6.TabIndex = 37;
             this.label6.Text = "Error:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // tf_error
             // 
@@ -165,6 +175,7 @@
             this.tf_error.Name = "tf_error";
             this.tf_error.Size = new System.Drawing.Size(100, 29);
             this.tf_error.TabIndex = 36;
+            this.tf_error.TextChanged += new System.EventHandler(this.tf_error_TextChanged);
             // 
             // frmRomberg
             // 

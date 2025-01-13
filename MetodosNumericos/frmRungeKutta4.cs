@@ -10,37 +10,29 @@ using System.Windows.Forms;
 
 namespace MetodosNumericos
 {
-    public partial class frmRomberg : Form
+    public partial class frmRungeKutta4 : Form
     {
-        public frmRomberg()
+        public frmRungeKutta4()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_calcular_Click(object sender, EventArgs e)
         {
-            float a, b;
-            int n;
-            float errorMax;
+            float condicion, a, b, n;
             float res;
-
+            condicion = float.Parse(tf_condicion.Text);
             a = float.Parse(tf_a.Text);
             b = float.Parse(tf_b.Text);
             n = int.Parse(tf_n.Text);
-            errorMax = float.Parse(tf_error.Text);
 
-            Integracion integracion = new Integracion();
-            
-            res = integracion.Romberg(a, b, n, errorMax, ref this.dgv_result);
-            tf_res.Text=res.ToString();
+            EcuacionesDiferenciales ecDif = new EcuacionesDiferenciales();
+
+            res = ecDif.metodoDeRK4(condicion, a, b, n, ref this.dgv_result);
+            tf_res.Text = res.ToString();
         }
 
-        private void tf_error_TextChanged(object sender, EventArgs e)
+        private void tf_n_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -65,6 +57,11 @@ namespace MetodosNumericos
 
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void tf_b_TextChanged(object sender, EventArgs e)
         {
 
@@ -85,12 +82,12 @@ namespace MetodosNumericos
 
         }
 
-        private void tf_n_TextChanged(object sender, EventArgs e)
+        private void tf_condicion_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

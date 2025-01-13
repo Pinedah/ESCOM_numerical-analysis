@@ -201,5 +201,19 @@ namespace MetodosNumericos
             frmEliminacionGaussiana.Show();
             frmEliminacionGaussiana.WindowState = FormWindowState.Normal;
         }
+
+        private void metodoDeRungeKuttaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRungeKutta4 frmMetodoRungeKutta = new frmRungeKutta4();
+            frmMetodoRungeKutta.Show();
+            frmMetodoRungeKutta.WindowState = FormWindowState.Normal;
+        }
+
+        private void metodoDeHeunToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMetodoDeHeun frmMetodoHeun = new frmMetodoDeHeun();
+            frmMetodoHeun.Show();
+            frmMetodoHeun.WindowState = FormWindowState.Normal;
+        }
     }
 }

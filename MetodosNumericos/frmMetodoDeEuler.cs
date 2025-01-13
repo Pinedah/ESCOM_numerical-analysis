@@ -27,20 +27,6 @@ namespace MetodosNumericos
 
         }
 
-        private void btn_calcular_Click(object sender, EventArgs e)
-        {
-            float condicion, h, error;
-
-            condicion = float.Parse(tf_condicion.Text);
-            h = float.Parse(tf_h.Text);
-            error = float.Parse(tf_error.Text);
-
-            EcuacionesDiferenciales ed = new EcuacionesDiferenciales();
-
-            float res = ed.metodoDeEuler(condicion, h, error);
-            tf_res.Text = res.ToString();
-        }
-
         private void tf_b_TextChanged(object sender, EventArgs e)
         {
 
@@ -77,6 +63,81 @@ namespace MetodosNumericos
         }
 
         private void tf_error_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_calcular_Click_1(object sender, EventArgs e)
+        {
+            float condicion,a, b,n;
+            float res;
+            condicion = float.Parse(tf_condicion.Text);
+            a = float.Parse(tf_a.Text);
+            b = float.Parse(tf_b.Text);
+            n = int.Parse(tf_n.Text);
+
+            EcuacionesDiferenciales ecDif = new EcuacionesDiferenciales();
+
+            res = ecDif.metodoDeEuler(condicion, a, b, n, ref this.dgv_result);
+            tf_res.Text = res.ToString();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_result_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_res_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_b_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_a_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tf_condicion_TextChanged(object sender, EventArgs e)
         {
 
         }
