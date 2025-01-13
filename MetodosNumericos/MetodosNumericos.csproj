@@ -236,6 +236,12 @@
     <Compile Include="frmTrapecio.Designer.cs">
       <DependentUpon>frmTrapecio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTrapecioAbierto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrapecioAbierto.Designer.cs">
+      <DependentUpon>frmTrapecioAbierto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrapecioDoble.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrapecio.resx">
       <DependentUpon>frmTrapecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrapecioAbierto.resx">
+      <DependentUpon>frmTrapecioAbierto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrapecioDoble.resx">
       <DependentUpon>frmTrapecioDoble.cs</DependentUpon>

@@ -64,6 +64,7 @@
             this.sEDOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemasDeEcuacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminacionGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trapecioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -272,7 +273,8 @@
             // newtonAbiertasToolStripMenuItem
             // 
             this.newtonAbiertasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newtonCottesN2ToolStripMenuItem});
+            this.newtonCottesN2ToolStripMenuItem,
+            this.trapecioToolStripMenuItem1});
             this.newtonAbiertasToolStripMenuItem.Name = "newtonAbiertasToolStripMenuItem";
             this.newtonAbiertasToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
             this.newtonAbiertasToolStripMenuItem.Text = "Newton Abiertas";
@@ -370,6 +372,13 @@
             this.eliminacionGaussianaToolStripMenuItem.Text = "Eliminacion Gaussiana";
             this.eliminacionGaussianaToolStripMenuItem.Click += new System.EventHandler(this.eliminacionGaussianaToolStripMenuItem_Click);
             // 
+            // trapecioToolStripMenuItem1
+            // 
+            this.trapecioToolStripMenuItem1.Name = "trapecioToolStripMenuItem1";
+            this.trapecioToolStripMenuItem1.Size = new System.Drawing.Size(257, 26);
+            this.trapecioToolStripMenuItem1.Text = "Trapecio";
+            this.trapecioToolStripMenuItem1.Click += new System.EventHandler(this.trapecioToolStripMenuItem1_Click);
+            // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +435,7 @@
         private System.Windows.Forms.ToolStripMenuItem puntosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem puntosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem puntosToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem trapecioToolStripMenuItem1;
     }
 }
 

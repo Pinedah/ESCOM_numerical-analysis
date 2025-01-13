@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Drawing.Printing;
 using MathNet.Symbolics;
 using System.Drawing;
+using System.IO;
 
 namespace MetodosNumericos
 {
@@ -714,14 +715,14 @@ namespace MetodosNumericos
         float FuncPrima(float x)
         {
             float r;
-            r = (float)(5 * Math.Pow(x, 4) - 9 * Math.Pow(x, 2) + 10 * x);
+            r = (float)(-35 * Math.Pow(x, 4) +40 * Math.Pow(x, 3)- 24*Math.Pow(x, 2)+30*x-8);
             return r;
         }
         float Func(float x)
         {
             float r;
             //r = (float)(Math.Pow(x, 2) - 3.0);
-            r = (float)(Math.Pow(x, 5) - 3 * Math.Pow(x,3) + 5*Math.Pow(x,2) - 10);
+            r = (float)(-7*Math.Pow(x, 5) +10 * Math.Pow(x,4) -8 *Math.Pow(x,3) +15* Math.Pow(x, 2)-8*x+10);
             return r;
         }
 

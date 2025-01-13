@@ -270,6 +270,27 @@ namespace MetodosNumericos
 
             return resultado;
         }
+        public float trapezoidalOpen(float a, float b)
+        {
+            // Paso 1: Inicializar el resultado
+            float resultado = 0;
+
+            // Paso 2: Calcular el tamaño del paso h
+            float h = (b - a) / 3; // Método del trapecio abierto divide el intervalo en tres subintervalos
+
+            // Paso 3: Aplicar la fórmula del trapecio abierto
+            //
+            // 
+            resultado = (4.0f / 3.0f) * h * (2 * f_trapezoidalOpen(a + h) + f_trapezoidalOpen(a + 2 * h));
+
+            // Paso 4: Devolver el resultado
+            return resultado;
+        }
+        private float f_trapezoidalOpen(float x)
+        {
+            // Ejemplo: f(x) = x^2
+            return x * x;
+        }
 
         /*
         public float romberg(float a, float b, float errorMaximo, ref DataGridView dgv)

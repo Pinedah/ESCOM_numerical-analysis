@@ -243,5 +243,12 @@ namespace MetodosNumericos
             frm4.Show();
             frm4.WindowState = FormWindowState.Normal;
         }
+
+        private void trapecioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmTrapecioAbierto i = new frmTrapecioAbierto();
+            i.Show();
+            i.WindowState = FormWindowState.Normal;
+        }
     }
 }
