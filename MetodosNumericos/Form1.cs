@@ -222,5 +222,26 @@ namespace MetodosNumericos
             frmsedo.Show();
             frmsedo.WindowState = FormWindowState.Normal;
         }
+
+        private void puntosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDerivada2p frm2 = new frmDerivada2p();
+            frm2.Show();
+            frm2.WindowState = FormWindowState.Normal;
+        }
+
+        private void puntosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmDerivacion3 frm3 = new frmDerivacion3();
+            frm3.Show();
+            frm3.WindowState = FormWindowState.Normal;
+        }
+
+        private void puntosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmDerivada4p frm4 = new frmDerivada4p();
+            frm4.Show();
+            frm4.WindowState = FormWindowState.Normal;
+        }
     }
 }

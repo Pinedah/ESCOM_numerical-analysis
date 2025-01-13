@@ -104,6 +104,24 @@
     <Compile Include="frmDeflacion.Designer.cs">
       <DependentUpon>frmDeflacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDerivacion3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDerivacion3.Designer.cs">
+      <DependentUpon>frmDerivacion3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDerivada2p.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDerivada2p.Designer.cs">
+      <DependentUpon>frmDerivada2p.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDerivada4p.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDerivada4p.Designer.cs">
+      <DependentUpon>frmDerivada4p.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEliminacionGaussiana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +264,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDeflacion.resx">
       <DependentUpon>frmDeflacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDerivacion3.resx">
+      <DependentUpon>frmDerivacion3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDerivada2p.resx">
+      <DependentUpon>frmDerivada2p.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDerivada4p.resx">
+      <DependentUpon>frmDerivada4p.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEliminacionGaussiana.resx">
       <DependentUpon>frmEliminacionGaussiana.cs</DependentUpon>

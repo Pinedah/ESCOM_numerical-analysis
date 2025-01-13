@@ -8,9 +8,8 @@ namespace MetodosNumericos
 {
     internal class Derivacion
     {
-        public float a;
-        public float b;
-        public int n;
+        public float x0;
+        public float h;
         public float Derivacion2Puntos(float x0,float h)
         {
 
