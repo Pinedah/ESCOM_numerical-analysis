@@ -33,14 +33,16 @@
             this.txtIncognitas = new System.Windows.Forms.TextBox();
             this.btnConvertir = new System.Windows.Forms.Button();
             this.dgvTriangular = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvResultados = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radio_eliGauss = new System.Windows.Forms.RadioButton();
+            this.radio_pivMax = new System.Windows.Forms.RadioButton();
+            this.radio_pivEsc = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatrizIngresada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTriangular)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvMatrizIngresada
@@ -86,55 +88,67 @@
             this.dgvTriangular.Size = new System.Drawing.Size(371, 216);
             this.dgvTriangular.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgvResultados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 320);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(412, 150);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultados.Location = new System.Drawing.Point(12, 302);
+            this.dgvResultados.Name = "dgvResultados";
+            this.dgvResultados.Size = new System.Drawing.Size(240, 192);
+            this.dgvResultados.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(452, 320);
+            this.label2.Location = new System.Drawing.Point(427, 302);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 13);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Selecciona el método";
             // 
-            // radioButton1
+            // radio_eliGauss
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(455, 347);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(131, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Eliminación Gaussiana";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radio_eliGauss.AutoSize = true;
+            this.radio_eliGauss.Location = new System.Drawing.Point(6, 29);
+            this.radio_eliGauss.Name = "radio_eliGauss";
+            this.radio_eliGauss.Size = new System.Drawing.Size(131, 17);
+            this.radio_eliGauss.TabIndex = 7;
+            this.radio_eliGauss.TabStop = true;
+            this.radio_eliGauss.Text = "Eliminación Gaussiana";
+            this.radio_eliGauss.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radio_pivMax
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(455, 370);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(159, 17);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Pivoteo Máximo de Columna";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radio_pivMax.AutoSize = true;
+            this.radio_pivMax.Location = new System.Drawing.Point(6, 52);
+            this.radio_pivMax.Name = "radio_pivMax";
+            this.radio_pivMax.Size = new System.Drawing.Size(159, 17);
+            this.radio_pivMax.TabIndex = 8;
+            this.radio_pivMax.TabStop = true;
+            this.radio_pivMax.Text = "Pivoteo Máximo de Columna";
+            this.radio_pivMax.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radio_pivEsc
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(455, 393);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(108, 17);
-            this.radioButton3.TabIndex = 9;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Pivoteo Escalado";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radio_pivEsc.AutoSize = true;
+            this.radio_pivEsc.Location = new System.Drawing.Point(6, 75);
+            this.radio_pivEsc.Name = "radio_pivEsc";
+            this.radio_pivEsc.Size = new System.Drawing.Size(108, 17);
+            this.radio_pivEsc.TabIndex = 9;
+            this.radio_pivEsc.TabStop = true;
+            this.radio_pivEsc.Text = "Pivoteo Escalado";
+            this.radio_pivEsc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radio_pivMax);
+            this.groupBox1.Controls.Add(this.radio_pivEsc);
+            this.groupBox1.Controls.Add(this.radio_eliGauss);
+            this.groupBox1.Location = new System.Drawing.Point(430, 302);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 102);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Selecciona el método";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // frmEliminacionGaussiana
             // 
@@ -142,11 +156,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumPurple;
             this.ClientSize = new System.Drawing.Size(935, 532);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvResultados);
             this.Controls.Add(this.dgvTriangular);
             this.Controls.Add(this.btnConvertir);
             this.Controls.Add(this.txtIncognitas);
@@ -156,7 +168,9 @@
             this.Text = "frmEliminacionGaussiana";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatrizIngresada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTriangular)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,10 +183,11 @@
         private System.Windows.Forms.TextBox txtIncognitas;
         private System.Windows.Forms.Button btnConvertir;
         private System.Windows.Forms.DataGridView dgvTriangular;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvResultados;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radio_eliGauss;
+        private System.Windows.Forms.RadioButton radio_pivMax;
+        private System.Windows.Forms.RadioButton radio_pivEsc;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

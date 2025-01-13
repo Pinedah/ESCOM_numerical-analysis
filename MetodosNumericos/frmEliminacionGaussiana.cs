@@ -46,18 +46,29 @@ namespace MetodosNumericos
 
             Console.WriteLine(NumIncognitas);
 
+
             int i, j;
 
             for (i = 0; i < NumIncognitas; i++)
                 for (j = 0; j <= NumIncognitas; j++)
                     MatrizA[i, j] = float.Parse(dgvMatrizIngresada.Rows[i].Cells[j].Value.ToString());
-                
-            
-
             SistemasEcuaciones sisEc = new SistemasEcuaciones();
-            sisEc.ElimGaussiana(NumIncognitas, ref MatrizA);
+
+            if(radio_eliGauss.Checked)
+                sisEc.ElimGaussiana(NumIncognitas, ref MatrizA, ref dgvTriangular);
+            else if(radio_pivMax.Checked)
+                sisEc.PivoteoMaximoColumna(NumIncognitas, ref MatrizA, ref dgvTriangular);
+            else 
+                sisEc.PivoteoEscalado(NumIncognitas, ref MatrizA, ref dgvTriangular);
+
+
+
 
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

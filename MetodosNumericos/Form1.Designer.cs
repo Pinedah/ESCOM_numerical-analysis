@@ -41,6 +41,9 @@
             this.métodoDeLaSecanteAitkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deflaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puntosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puntosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.puntosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.integraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trapecioCompuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpson13ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,9 +64,6 @@
             this.sEDOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemasDeEcuacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminacionGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.puntosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.puntosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.puntosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@
             this.sistemasDeEcuacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(905, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(982, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -185,6 +185,27 @@
             this.dToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.dToolStripMenuItem.Text = "Derivación";
             this.dToolStripMenuItem.Click += new System.EventHandler(this.dToolStripMenuItem_Click);
+            // 
+            // puntosToolStripMenuItem
+            // 
+            this.puntosToolStripMenuItem.Name = "puntosToolStripMenuItem";
+            this.puntosToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.puntosToolStripMenuItem.Text = "2 puntos";
+            this.puntosToolStripMenuItem.Click += new System.EventHandler(this.puntosToolStripMenuItem_Click);
+            // 
+            // puntosToolStripMenuItem1
+            // 
+            this.puntosToolStripMenuItem1.Name = "puntosToolStripMenuItem1";
+            this.puntosToolStripMenuItem1.Size = new System.Drawing.Size(157, 26);
+            this.puntosToolStripMenuItem1.Text = "3 puntos";
+            this.puntosToolStripMenuItem1.Click += new System.EventHandler(this.puntosToolStripMenuItem1_Click);
+            // 
+            // puntosToolStripMenuItem2
+            // 
+            this.puntosToolStripMenuItem2.Name = "puntosToolStripMenuItem2";
+            this.puntosToolStripMenuItem2.Size = new System.Drawing.Size(157, 26);
+            this.puntosToolStripMenuItem2.Text = "4 puntos";
+            this.puntosToolStripMenuItem2.Click += new System.EventHandler(this.puntosToolStripMenuItem2_Click);
             // 
             // integraciónToolStripMenuItem
             // 
@@ -337,44 +358,24 @@
             // 
             this.sistemasDeEcuacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.eliminacionGaussianaToolStripMenuItem});
+            this.sistemasDeEcuacionesToolStripMenuItem.Font = new System.Drawing.Font("Calisto MT", 15F, System.Drawing.FontStyle.Bold);
             this.sistemasDeEcuacionesToolStripMenuItem.Name = "sistemasDeEcuacionesToolStripMenuItem";
-            this.sistemasDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.sistemasDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             this.sistemasDeEcuacionesToolStripMenuItem.Text = "Sistemas De Ecuaciones";
             // 
             // eliminacionGaussianaToolStripMenuItem
             // 
             this.eliminacionGaussianaToolStripMenuItem.Name = "eliminacionGaussianaToolStripMenuItem";
-            this.eliminacionGaussianaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.eliminacionGaussianaToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
             this.eliminacionGaussianaToolStripMenuItem.Text = "Eliminacion Gaussiana";
             this.eliminacionGaussianaToolStripMenuItem.Click += new System.EventHandler(this.eliminacionGaussianaToolStripMenuItem_Click);
-            // 
-            // puntosToolStripMenuItem
-            // 
-            this.puntosToolStripMenuItem.Name = "puntosToolStripMenuItem";
-            this.puntosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.puntosToolStripMenuItem.Text = "2 puntos";
-            this.puntosToolStripMenuItem.Click += new System.EventHandler(this.puntosToolStripMenuItem_Click);
-            // 
-            // puntosToolStripMenuItem1
-            // 
-            this.puntosToolStripMenuItem1.Name = "puntosToolStripMenuItem1";
-            this.puntosToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
-            this.puntosToolStripMenuItem1.Text = "3 puntos";
-            this.puntosToolStripMenuItem1.Click += new System.EventHandler(this.puntosToolStripMenuItem1_Click);
-            // 
-            // puntosToolStripMenuItem2
-            // 
-            this.puntosToolStripMenuItem2.Name = "puntosToolStripMenuItem2";
-            this.puntosToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
-            this.puntosToolStripMenuItem2.Text = "4 puntos";
-            this.puntosToolStripMenuItem2.Click += new System.EventHandler(this.puntosToolStripMenuItem2_Click);
             // 
             // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumPurple;
-            this.ClientSize = new System.Drawing.Size(905, 221);
+            this.ClientSize = new System.Drawing.Size(982, 221);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "frm";
