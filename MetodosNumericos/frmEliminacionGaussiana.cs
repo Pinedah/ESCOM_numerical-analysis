@@ -55,11 +55,11 @@ namespace MetodosNumericos
             SistemasEcuaciones sisEc = new SistemasEcuaciones();
 
             if(radio_eliGauss.Checked)
-                sisEc.ElimGaussiana(NumIncognitas, ref MatrizA, ref dgvTriangular);
+                sisEc.ElimGaussiana(NumIncognitas, ref MatrizA, ref dgvTriangular, ref dgvResultados);
             else if(radio_pivMax.Checked)
-                sisEc.PivoteoMaximoColumna(NumIncognitas, ref MatrizA, ref dgvTriangular);
+                sisEc.PivoteoMaximoColumna(NumIncognitas, ref MatrizA, ref dgvTriangular, ref dgvResultados);
             else 
-                sisEc.PivoteoEscalado(NumIncognitas, ref MatrizA, ref dgvTriangular);
+                sisEc.PivoteoEscalado(NumIncognitas, ref MatrizA, ref dgvTriangular, ref dgvResultados);
 
 
 

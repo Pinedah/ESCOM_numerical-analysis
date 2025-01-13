@@ -27,7 +27,7 @@ namespace MetodosNumericos
             }
         }
 
-        public bool ElimGaussiana(int n, ref float[,] Mat, ref DataGridView dgvTriangular)
+        public bool ElimGaussiana(int n, ref float[,] Mat, ref DataGridView dgvTriangular, ref DataGridView dgvResultados)
         {
 
 
@@ -48,50 +48,15 @@ namespace MetodosNumericos
             }
 
             imprimirTriangular(n, ref Mat, ref dgvTriangular);
+
+            // Sustitución hacia atrás
+            float[] ValIncognitas = new float[n];
+            SustHaciaAtras(n, Mat, ValIncognitas);
+            imprimirFinal(n, ref ValIncognitas, ref dgvResultados);
             return true;
         }
 
-        /*
-        public void PivoteoMaxColumna(int n, ref float[,] Mat, ref DataGridView dgvTriangular)
-        {
-            int i, j, r;
-            int RengInterc;
-            float Aux;
-            float Multiplicador;
-            for (i = 0; i < n - 1; i++)
-            {
-                RengInterc = -1;
-                Aux = Math.Abs(Mat[i, j]);
-                for (r = i + 1; r < n; r++)
-                    if (Mat[r, i] > Aux)
-                    {
-                        RengInterc = r;
-                        Aux = Math.Abs(Mat[r, i]);
-                    }
-                if (RengInterc != -1)
-                    for (j = i; j <= n; j++)
-                    {
-                        Aux = Mat[i, j];
-                        Mat[i, j] = Mat[RengInterc, j];
-                        Mat[RengInterc, j] = Aux;
-
-                    }
-                if (Mat[i, i] == 0)
-                    continue;
-                for (r = i + 1; r < n; r++)
-                {
-                    Multiplicador = -Mat[r, i] / Mat[i, i];
-                    Mat[r, i] = 0;
-                    for (j = i + 1; j <= n; j++)
-                    {
-                        Mat[r, j] = Multiplicador * Mat[i, j] + Mat[r, j];
-                    }
-                }
-            }
-        }
-        */
-
-        public void PivoteoMaximoColumna(int n, ref float[,] Mat, ref DataGridView dgvTriangular)
+        public void PivoteoMaximoColumna(int n, ref float[,] Mat, ref DataGridView dgvTriangular, ref DataGridView dgvResultados)
         {
             int i, j, r;
             int RengInterc;
@@ -128,9 +93,14 @@ namespace MetodosNumericos
                 }
             }
             imprimirTriangular(n, ref Mat, ref dgvTriangular);
+
+            // Sustitución hacia atrás
+            float[] ValIncognitas = new float[n];
+            SustHaciaAtras(n, Mat, ValIncognitas);
+            imprimirFinal(n, ref ValIncognitas, ref dgvResultados);
         }
 
-        public void PivoteoEscalado(int n, ref float[,] Mat, ref DataGridView dgvTriangular)
+        public void PivoteoEscalado(int n, ref float[,] Mat, ref DataGridView dgvTriangular, ref DataGridView dgvResultados)
         {
             int i, j, r;
             int RengInterc;
@@ -176,6 +146,11 @@ namespace MetodosNumericos
                 }
             }
             imprimirTriangular(n, ref Mat, ref dgvTriangular);
+
+            // Sustitución hacia atrás
+            float[] ValIncognitas = new float[n];
+            SustHaciaAtras(n, Mat, ValIncognitas);
+            imprimirFinal(n, ref ValIncognitas, ref dgvResultados);
         }
 
 
@@ -207,15 +182,15 @@ namespace MetodosNumericos
                     dgvTriangular.Rows[i].Cells[j].Value = Mat[i, j];
         }
 
-        private void imprimirFinal(int n, ref float[] ValIncognitas, ref DataGridView dgvTriangular)
+        private void imprimirFinal(int n, ref float[] ValIncognitas, ref DataGridView dvgResultados)
         {
-            dgvTriangular.Rows.Clear();
-            dgvTriangular.Columns.Clear();
-            dgvTriangular.Columns.Add("Columna0", "Columna0");
+            dvgResultados.Rows.Clear();
+            dvgResultados.Columns.Clear();
+            dvgResultados.Columns.Add("Columna0", "Columna0");
             for (int i = 0; i < n; i++)
-                dgvTriangular.Rows.Add();
+                dvgResultados.Rows.Add();
             for (int i = 0; i < n; i++)
-                dgvTriangular.Rows[i].Cells[0].Value = ValIncognitas[i];
+                dvgResultados.Rows[i].Cells[0].Value = ValIncognitas[i];
         }
 
     }
