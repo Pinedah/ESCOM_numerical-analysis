@@ -281,7 +281,7 @@ namespace MetodosNumericos
             // Paso 3: Aplicar la fórmula del trapecio abierto
             //
             // 
-            resultado = (4.0f / 3.0f) * h * (2 * f_trapezoidalOpen(a + h) + f_trapezoidalOpen(a + 2 * h));
+            resultado = (3.0f / 2.0f) * h * (f_trapezoidalOpen(a + h) + f_trapezoidalOpen(a+2*h));
 
             // Paso 4: Devolver el resultado
             return resultado;
