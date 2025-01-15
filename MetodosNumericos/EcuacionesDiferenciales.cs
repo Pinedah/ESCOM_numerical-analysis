@@ -283,9 +283,10 @@ namespace MetodosNumericos
 
             // Definimos las ecuaciones del sistema
             float u1Prima = u2; // u'_1(t) = u2(t)
-            float u2Prima = (float)(Math.Exp(2 * t) * Math.Sin(t)) - 2 * u1 + 2 * u2; // u'_2(t)
+            float u2Prima = (float)(Math.Exp(2 * t) * Math.Sin(t)) - 2 * u1 + 2 * u2;// u'_2(t)
+            float u2Prima1 = (float)(-5 * u1 * u2 - (u1 + 7) * Math.Sin(t));
 
-            return new float[] { u1Prima, u2Prima };
+            return new float[] { u1Prima, u2Prima1 };
         }
 
 
